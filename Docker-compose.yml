@@ -1,0 +1,57 @@
+version: '3.10'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile  
+    container_name: cosci_backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+      - /dev/snd:/dev/snd
+      - ./statics:/app/statics
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY= 
+      - "/dev/snd:/dev/snd"
+    group_add:
+      - audio
+    privileged: true
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile  
+    container_name: cosci_frontend
+    ports:
+      - "2000:2000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    environment:
+      - REACT_APP_API_URL=http://cosci_backend:4000/api
+      - HOST=0.0.0.0
+      - WDS_SOCKET_PORT=0
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - BROWSER=none  
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge
+
+volumes:
+   static_volume: 

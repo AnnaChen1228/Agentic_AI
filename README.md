@@ -1,69 +1,59 @@
-# Cosci Guide Agent
+# Guide Agent
+
+An interactive learning assistant system with RAG (Retrieval-Augmented Generation) capabilities.
+
+## Project Structure
 ```bash
 .
-├── .env
+├── Docker-compose.yml
 ├── README.md
+├── backend
+│   ├── Dockerfile
+│   ├── RAG
+│   ├── app.py
+│   ├── rag_main.py
+│   ├── requirements.txt
+│   ├── statics
+│   └── util
+├── frontend
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── node_modules
+│   ├── package.json
+│   ├── public
+│   └── src
 ├── requirements.txt
-├── vectordb
-└── src
-    ├── Data
-    │   ├── info  # store activity & simulation info
-    │   │   └── simulation_features_info.csv
-    │   └── link  # store various links
-    │       ├── activity_links.csv
-    │       ├── all_links.csv
-    │       ├── base_links.csv
-    │       ├── base_links_name.csv
-    │       ├── simulation_feature_links.csv
-    │       ├── simulation_links.csv
-    │       └── userinfo_links.csv
-    ├── RAG
-    │   ├── build_vectordb.py
-    │   └── retrieve.py
-    └── web_crawl
-        ├── generate_web_info.py  # generate web info by gpt4o-mini
-        ├── get_activity_link.py   # web crawl activity link
-        ├── get_all_link.py        # web crawl all link in Cosci
-        ├── get_base_link.py       # get base link (e.g., home, password...)
-        ├── get_link.py            # general function to get links
-        ├── get_simulation_info.py  # get simulation title and description
-        ├── get_simulation_link.py  # retrieve specific simulation links
-        ├── name_link.py           # handle naming conventions for links
-        ├── read_write.py           # functions for input/output operations
-        └── sep_link.py             # clear all_links.csv
+└── statics
+  └── chroma_db
 ```
+
+## Prerequisites
+- Docker and Docker Compose installed
+- OpenAI API key
 
 ## Environment Setup
-- To run the project, follow these steps to create a virtual environment:
-```
-conda create --name cosci python=3.9
-conda activate cosci
-pip install -r requirements.txt
+
+1. Clone the repository:
+```bash
+git clone https://github.com/AnnaChen1228/Agentic_AI.git
+cd Agentic_AI
 ```
 
-- Configure `.env` File
-- Create a .env file in the project root directory and add your API key:
-```
-API_KEY = YOUR KEY
-```
-
-## Web crawl
-- Use seleium to web crawl CosciUse Selenium to crawl links in Cosci. 
-- Run the following commands:
-
-```
-python src/Web_crawl/get_all_link.py # get all link in cosci
-python src/Web_crawl/sep_link.py # clear up all link to activity, simulation,...
-python src/Web_crawl/get_base_link.py # get main link
-python src/Web_crawl/generate_web_info.py # use gpt to generate main link info
-python src/Web_crawl/get_simulation_link.py # get simulation link
-python src/Web_crawl/get_simulation_info.py # use simulation link to get info
+2. Configure Environment Variables:
+ - Open `Docker-compose.yml`
+ - Add your OpenAI API key at line 17:
+```yaml
+environment:
+- OPENAI_API_KEY=your_api_key_here
 ```
 
-## RAG Module
-- Use the RAG module to build the vector database and retrieve information:
+## Running the Application
 
+1. Build and start the containers:
+```bash
+docker compose up --build
 ```
-python -m src.RAG.build_vectordb -> build vector db
-python src/RAG/retrieve.py -> retrieve relative info
-```
+
+2. Access the application:
+ - Frontend: [http://localhost:2000](http://localhost:2000)
+ - Backend API: [http://localhost:4000](http://localhost:4000)

@@ -1,8 +1,9 @@
-# Frontend
+# Guide Agent Frontend
 
-## Structure
+A React-based frontend for the interactive learning assistant system.
 
-```
+## Project Structure
+```bash
 .
 ├── Dockerfile
 ├── README.md
@@ -11,23 +12,55 @@
 ├── package.json
 ├── public
 └── src
-    ├── App.css
-    ├── App.js 
-    ├── App.test.js
-    ├── component
-    ├── index.css
-    ├── index.js
-    └── page
+  ├── App.css
+  ├── App.js
+  ├── App.test.js
+  ├── component
+  │   ├── Chat_field.js      # Main chat interface
+  │   ├── Display_field.js   # Display area
+  │   ├── Input_field.js     # Input field
+  │   ├── Loading.js         # Loading animation
+  │   ├── Send_btn.js        # Send button
+  │   ├── System_message.js  # System message
+  │   └── User_message.js    # User message
+  ├── index.css
+  ├── index.js
+  ├── logo.svg
+  ├── page
+  │   └── Index_page.js      # Main page
+  ├── reportWebVitals.js
+  └── setupTests.js
 ```
 
-## API
+## API Specification
 
-### Endpoint `http://localhost:8000/api`
-### Request Format
+### Base URL
 ```
-POST
+http://localhost:4000
+```
 
-// Headers
+### API Endpoints
+
+#### 1. Initialize Chat
+```javascript
+GET /chat/init
+
+// Response Format
+{
+  "response": "Initial greeting message",
+  "title": [],              // Array of document titles
+  "id": [],                 // Array of document IDs
+  "info": null,             // User information object
+  "in_follow_up": false,    // Follow-up state flag
+  "is_first_question": true // First question flag
+}
+```
+
+#### 2. Chat Interaction
+```javascript
+POST /chat
+
+// Request Headers
 {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -35,25 +68,37 @@ POST
 
 // Request Body
 {
-  "query": "Your question or search query here"
+  "query": "User message",
+  "in_follow_up": boolean,      // Follow-up state flag
+  "last_complete_info": Object  // Last complete user information
 }
-```
-### Response Format
-```
+
+// Response Format
 {
-  "Response": "Text answer from the AI system",  // Text displayed in the chat interface
-  "Link": "Document title or description",       // Title of the referenced document
-  "Reference": "data:application/pdf;base64,..." // Base64-encoded document (PDF or image)
+  "response": "AI response message",
+  "title": string[],        // Array of relevant document titles
+  "id": string[],          // Array of document IDs
+  "info": Object,          // User information object
+  "in_follow_up": boolean, // Follow-up state flag
+  "is_first_question": boolean,
+  "complete": boolean      // Current interaction completion status
 }
 ```
 
-## Execute frontend
-```
+## Prerequisites
+- Node.js installed
+- npm package manager
+
+## Local Development Setup
+
+1. Install dependencies:
+```bash
 npm install
+```
+
+2. Start the development server:
+```bash
 npm run start
 ```
 
-## Notes
-- The backend determines the appropriate document based on your query
-- Documents are returned as base64-encoded strings with proper MIME types
-- Supported document types include PDFs and various image formats
+The application will be available at [http://localhost:2000](http://localhost:2000)

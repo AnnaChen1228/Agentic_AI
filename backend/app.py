@@ -46,10 +46,6 @@ async def check_vectorstores(request: Request, call_next):
     response = await call_next(request)
     return response
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
 @app.get("/chat/init")
 async def init_chat():
     try:

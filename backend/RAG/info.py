@@ -140,8 +140,8 @@ def chat(user_input, continue_chat):
         try:
             response_dict = eval(response)
             if response_dict.get("complete", False):
-                current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
-                write_json(f'./statics/rag_logs/{current_time}.jsonl', response_dict["info"])
+                # current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
+                # write_json(f'./statics/rag_logs/{current_time}.jsonl', messages)
                 print("\nAll necessary information has been collected.")
             
             return response_dict
@@ -233,11 +233,11 @@ Return valid JSON only.
             response_dict['info']['grade'] = previous_info.get('grade')
             response_dict['info']['age'] = previous_info.get('age')
             
-            # 保持原有的類別信息
-            if 'category' in previous_info:
-                response_dict['info']['category'] = previous_info['category']
-            if 'detail_category' in previous_info:
-                response_dict['info']['detail_category'] = previous_info['detail_category']
+            # # 保持原有的類別信息
+            # if 'category' in previous_info:
+            #     response_dict['info']['category'] = previous_info['category']
+            # if 'detail_category' in previous_info:
+            #     response_dict['info']['detail_category'] = previous_info['detail_category']
         
         follow_up_messages.append({"role": "assistant", "content": str(response_dict)})
         

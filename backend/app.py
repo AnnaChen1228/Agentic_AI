@@ -4,6 +4,7 @@ import uvicorn
 from RAG.info import chat, follow_up_chat
 from RAG import retrieve
 import json
+from pathlib import Path
 
 app = FastAPI()
 vectorstores = None
@@ -163,13 +164,12 @@ async def chat_endpoint(request: Request):
             
             if user_info.get("complete", True):
                 result = retrieve.retrieve_simulation(vectorstores, user_info['info'])
-                
                 if result.get('is_retrieve', True):
-                    print(response)
                     response = retrieve.summary_simulation(
                         result['retrieve_info'],
                         user_info['info']
                     )
+                    print(response)
                     return {
                         "response": response,
                         "title": result.get('title', []),
@@ -196,4 +196,5 @@ async def chat_endpoint(request: Request):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == '__main__':
+    Path('./statics/rag_logs').mkdir(parents=True, exist_ok=True)
     uvicorn.run("app:app", host="0.0.0.0", port=4000, reload=True)

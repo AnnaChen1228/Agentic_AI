@@ -2,6 +2,9 @@
 
 A FastAPI-based backend with RAG (Retrieval-Augmented Generation) capabilities for the interactive learning assistant system.
 
+## Multiagent
+![System Workflow](../statics/public/multiagent.png)
+
 ## Project Structure
 ```bash
 .

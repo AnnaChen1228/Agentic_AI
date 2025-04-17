@@ -2,6 +2,9 @@
 
 An interactive learning assistant system with RAG (Retrieval-Augmented Generation) capabilities.
 
+## System Workflow
+![System Workflow](workflow.png)
+
 ## Project Structure
 ```bash
 .

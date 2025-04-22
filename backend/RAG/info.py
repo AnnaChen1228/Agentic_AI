@@ -2,9 +2,6 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 import json
-from util.file import write_json
-from datetime import datetime
-from pathlib import Path
 
 # Load environment variables
 load_dotenv()
@@ -140,8 +137,6 @@ def chat(user_input, continue_chat):
         try:
             response_dict = eval(response)
             if response_dict.get("complete", False):
-                # current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
-                # write_json(f'./statics/rag_logs/{current_time}.jsonl', messages)
                 print("\nAll necessary information has been collected.")
             
             return response_dict

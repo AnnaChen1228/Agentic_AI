@@ -4,8 +4,10 @@ from langchain.schema import Document
 from dotenv import load_dotenv
 import os
 import re
-import json
 import shutil
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from util.file import read_json
 
 load_dotenv()
 embedding = OpenAIEmbeddings(model='text-embedding-3-small', openai_api_key=os.getenv('OPENAI_API_KEY'))
@@ -111,7 +113,7 @@ def add_simulation_to_db(data, vectorstores):
             # 安全地獲取和清理文本
             cleaned_abstract = clean_html(simulation_data.get('abstract', ''))
             cleaned_desc = clean_html(simulation_data.get('desc', ''))
-            
+            intro = simulation_data.get('intro', '')
             # 安全地獲取其他字段
             title = simulation_data.get('title', '')
             sim_id = simulation_data.get('id', '')
@@ -139,6 +141,7 @@ def add_simulation_to_db(data, vectorstores):
             # 準備全域文檔內容（字串格式）
             all_content = f"""
 Title: {title}
+Introduaiotn: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
@@ -169,6 +172,7 @@ Variables:
             # 年級相關文檔內容
             grade_content = f"""
 Title: {title}
+Introduaiotn: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
@@ -192,14 +196,14 @@ Variables:
             # 類別相關文檔內容
             category_content = f"""
 Title: {title}
+Introduaiotn: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
-Grade Levels: {', '.join(grades)}"""
-# Variables:
-# {variables_text}
-
-            
+Grade Levels: {', '.join(grades)}
+Variables:
+{variables_text}
+"""            
             doc_category = Document(
                 page_content=category_content,
                 metadata=metadata
@@ -220,14 +224,9 @@ Grade Levels: {', '.join(grades)}"""
             
     print("All simulation data has been added to the database.")
 
-def load_json(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return data
-
 def main():
-    file_path = './RAG/data/simulation_info.json'
-    data = load_json(file_path)
+    file_path = './RAG/data/simulation_info_intro.json'
+    data = read_json(file_path)
     if os.path.exists(PERSIST_DIR):
         shutil.rmtree(PERSIST_DIR)
     # 初始化向量存儲

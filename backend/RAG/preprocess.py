@@ -1,5 +1,13 @@
+from openai import OpenAI
+from dotenv import load_dotenv
 import requests
-import json
+from summary_web import summary_website
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from util.file import write_json
+load_dotenv()
+
 def get_data(url):
     data = {
         '$limit': 150,
@@ -19,13 +27,20 @@ def get_data(url):
 def preprocess_data(data):
     info = []
     exclude_keys = {'ml_infoTitle', 'abstract', 'desc', 'user', 'updatedAt','multiLangDesc'}
-    
     for item in data['data']:
         # 先創建 v_data，排除不需要的鍵
         v_data = {k: v for k, v in item['token']['v'].items() if k not in exclude_keys}
-        
+        result  = summary_website(f"""
+                                  simulation name: {item['token']['v']}
+                                  description:{item['token']['v'].get('desc', '')}
+                                  recommand grade:{item['infoGrade']}
+                                  recommand categories:{item['infoCategories']}
+                                  recommand keywords:{item['infoKeywords']}
+                                  website_link: https://cosci.tw/run/?name={item['filename']}""")
+        # print(result)
         info.append({
             'title': item['token']['v'].get('ml_infoTitle', ''),
+            'intro': eval(result)["intro"],
             'abstract': item['token']['v'].get('abstract', ''),  # 使用 get 方法，當 key 不存在時返回 ''
             'desc': item['token']['v'].get('desc', ''),
             'infoGrade': item['infoGrade'],
@@ -34,18 +49,13 @@ def preprocess_data(data):
             'v': v_data,
             'id': item['filename']
         })
-    
     return info
-
-def write_json(data, filename):
-    with open(filename, 'w',encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
 
 def main():
     url = "https://api.cosci.tw/new-sim-lang"
     data = get_data(url)
     after_data = preprocess_data(data)
-    file_path = 'data/simulation_info.json'
+    file_path = 'RAG/data/simulation_info_test.json'
     write_json(after_data, file_path)
     print(f"Data written to {file_path}")
     

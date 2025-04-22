@@ -1,0 +1,752 @@
+[
+    {
+        "title": "Buoyancy - Sink or Float?",
+        "link": "https://cosci.tw/run/?name=rfqJqv1522291246573",
+        "summary": "This interactive simulation allows users to explore the concept of buoyancy by testing whether various objects sink or float in water. Users can choose different materials and shapes, drop them into water, and observe the outcomes. The simulation helps visualize and understand the principles behind why some objects float while others sink, making it an effective educational tool for learning about density, buoyancy, and related physical properties."
+    },
+    {
+        "title": "The Refraction and Reflection of Light",
+        "link": "https://cosci.tw/run/?name=iSdH8E1571884516748",
+        "summary": "This simulation allows users to explore the concepts of refraction and reflection of light. Through interactive graphics and adjustable parameters, users can visualize how light behaves as it passes from one medium to another, observe changes in the angle of incidence and refraction, and compare the effects of different materials on the path of light. The simulation serves as an educational tool for understanding fundamental optics principles."
+    },
+    {
+        "title": "Pendulum - Mechanical energy",
+        "link": "https://cosci.tw/run/?name=4b7coe1621305720943",
+        "summary": "This interactive simulation allows users to explore the motion of a pendulum and observe the relationship between kinetic and potential energy in the system. Users can adjust parameters such as the length of the pendulum, amplitude, and gravitational acceleration to observe how these variables affect the pendulum's swing and total mechanical energy. The simulation visually demonstrates the concepts of energy conservation and energy transformation in a simple mechanical system."
+    },
+    {
+        "title": "Ohm's Law: Series and Parallel Circuits",
+        "link": "https://cosci.tw/run/?name=bSlNUK1526261821313",
+        "summary": "This interactive simulation allows users to explore the basics of Ohm's Law by manipulating resistors in both series and parallel circuit configurations. Users can change resistance, voltage, and observe the effects on current, helping to build an intuitive understanding of electrical principles. The simulation visually demonstrates how circuit components interact and how total resistance is calculated depending on the arrangement."
+    },
+    {
+        "title": "單擺-周期與力學能",
+        "link": "https://cosci.tw/run/?name=Qnn3c51627438539460",
+        "summary": "這個網頁提供了一個單擺 (簡單擺) 系統的模擬工具，讓用戶可以探索單擺的週期與動能、位能的變化。使用者可調整擺長與起始角度等參數，並觀察擺運動過程中力學能守恆與週期變化的物理概念。此模擬對於物理教學與課堂演示非常有幫助。"
+    },
+    {
+        "title": "Ticker-tape timer",
+        "link": "https://cosci.tw/run/?name=VXIsFP1631921182999",
+        "summary": "The Ticker-tape timer simulation is an interactive physics tool that allows users to explore concepts related to motion and timing using a virtual ticker-tape timer. Users can adjust variables and observe how the ticker tape records intervals, typically used in classrooms to visualize speed, acceleration, and time intervals in kinematics experiments."
+    },
+    {
+        "title": "施力與運動 (Force and Motion) Simulation",
+        "link": "https://cosci.tw/run/?name=2BhUw51675735869928",
+        "summary": "This interactive simulation, titled '施力與運動', focuses on the relationship between applying force and the resulting motion of an object. The simulation allows users to adjust forces and observe how these affect speed, acceleration, and movement, helping to visualize Newton’s laws of motion. It is designed as an educational tool for learning physics concepts through experimentation and visualization."
+    },
+    {
+        "title": "質心與動量守恆A-funB",
+        "link": "https://cosci.tw/run/?name=ERIAEw1557111734068",
+        "summary": "The simulation \"質心與動量守恆A-funB\" (Center of Mass and Conservation of Momentum A-funB) allows users to explore physics concepts related to the center of mass and the conservation of momentum. It provides interactive scenarios for users to experiment with different masses and velocities, observe the resulting motion, and understand how momentum is conserved in collisions and interactions. The platform is designed for educational purposes, making complex physics concepts more accessible through visualization and hands-on experimentation."
+    },
+    {
+        "title": "Buoyancy-EXP",
+        "link": "https://cosci.tw/run/?name=iVrzvH1623741503830",
+        "summary": "The Buoyancy-EXP simulation is an interactive educational tool available on the cosci.tw platform. It allows users to explore the principles of buoyancy by manipulating variables such as mass, volume, and liquid type. The simulation visually demonstrates how objects float or sink in different fluids, making it ideal for students and educators looking to understand or teach the concepts of buoyancy, Archimedes' principle, and density in a hands-on way."
+    },
+    {
+        "title": "Coriolis force - retrieve Pikachu A",
+        "link": "https://cosci.tw/run/?name=23dikg1553651245332",
+        "summary": "This interactive simulation demonstrates the Coriolis force using a playful game scenario involving Pikachu. Users can experiment with motion on a rotating platform, visualizing how the Coriolis effect alters the path of moving objects. The simulation provides an engaging way to understand the physics concept by seeing how a straight-line path appears curved to observers on a spinning surface."
+    },
+    {
+        "title": "Free Fall A: Who Reaches the Ground First?",
+        "link": "https://cosci.tw/run/?name=aQznAq1495591303922",
+        "summary": "This website hosts an interactive physics simulation exploring the concept of free fall, specifically designed to answer the question: if two objects are dropped from the same height, who (or what) reaches the ground first? The simulation allows users to adjust parameters and visually observe how different conditions—such as mass or shape—impact the result, making it a valuable educational tool for understanding gravity and motion."
+    },
+    {
+        "title": "The work-energy theorem-slingshot B",
+        "link": "https://cosci.tw/run/?name=aU0W051634197008773",
+        "summary": "This website hosts an interactive simulation exploring the work-energy theorem using a slingshot scenario (version B). Users can manipulate variables to see how work done on a slingshot translates to the kinetic energy of a launched object. This tool is suitable for physics learners to visualize and understand the relationship between force, distance, and energy, reinforcing the principles of the work-energy theorem."
+    },
+    {
+        "title": "Friction-Christmas Gift Fun",
+        "link": "https://cosci.tw/run/?name=6JGCbx1512956058267",
+        "summary": "This interactive simulation, labeled 'Friction-Christmas Gift Fun,' allows users to explore the concept of friction in a festive context, likely involving Christmas presents. Users can engage with the simulation to observe how friction impacts the movement of objects, making it a useful educational tool for understanding physics in a playful, holiday-themed environment."
+    },
+    {
+        "title": "潮汐-地月日",
+        "link": "https://cosci.tw/run/?name=vtXohS1668736238215",
+        "summary": "This simulation, titled “潮汐-地月日” (“Tide - Earth, Moon, Sun”), demonstrates how the gravitational forces between the Earth, Moon, and Sun interact to create tides on Earth. Using visual models, the simulation helps users explore how different positions of the Moon and Sun relative to the Earth influence tide strength and cycles. It’s an educational tool commonly used in classrooms to illustrate tidal phenomena and celestial mechanics."
+    },
+    {
+        "title": "酸鹼中和-強酸強鹼(教學)",
+        "link": "https://cosci.tw/run/?name=EM0T6b1683596198802",
+        "summary": "這個線上模擬教學專注於強酸與強鹼的中和反應。使用者可以透過平台觀察不同濃度與體積的強酸（如鹽酸）及強鹼（如氫氧化鈉）混合後，pH值變化的過程。模擬讓學生直觀學習中和點、鹽與水的生成，以及酸鹼滴定的原理，非常適合化學教學及學習。"
+    },
+    {
+        "title": "Circular Motion and Friction Simulation",
+        "link": "https://cosci.tw/run/?name=ynGIbT1461565101396",
+        "summary": "This interactive simulation allows users to explore the concepts of circular motion and friction. Users can adjust parameters such as mass, velocity, radius of the circle, and friction coefficient to observe how these factors influence the motion of an object moving in a circle. The simulation visually demonstrates the forces at play, providing a practical understanding of physics principles related to circular motion and the role of friction."
+    },
+    {
+        "title": "Projectile Launcher - Flat Surface Simulation",
+        "link": "https://cosci.tw/run/?name=6BTS751443059889198",
+        "summary": "This website hosts an interactive simulation titled 'Projectile Launcher - Flat Surface.' It allows users to experiment with launching projectiles across a flat surface, adjusting parameters like initial velocity and launch angle to observe the resulting projectile motion. The simulation visually displays the trajectory and provides additional data, making it useful for learning about basic kinematic principles in physics."
+    },
+    {
+        "title": "Buoyancy-Archimedes' Crown Simulation",
+        "link": "https://cosci.tw/run/?name=DrtEMC1508381757772",
+        "summary": "This online simulation, titled 'Buoyancy-Archimedes' Crown,' allows users to explore the concept of buoyancy and the principle behind Archimedes' famous discovery. Through interactive activities, users can experiment with submerging objects in fluids, observe the displacement of water, and understand how buoyant force is related to the amount of fluid displaced. The simulation provides a hands-on way to investigate the legend of Archimedes and the testing of King Hiero's gold crown for authenticity based on its density. Ideal for students learning about physics and fluid mechanics."
+    },
+    {
+        "title": "Non-Elastic Collision and Projectile – Hfun Simulation",
+        "link": "https://cosci.tw/run/?name=2WUKEr1483339623458",
+        "summary": "This interactive simulation on the Hfun platform demonstrates the concepts of non-elastic collisions and projectile motion. Users can visualize how two objects interact during a collision where kinetic energy is not conserved, and observe the resulting projectile trajectory. The simulation is designed for educational purposes, helping users understand fundamental physics principles through hands-on experimentation and real-time animations."
+    },
+    {
+        "title": "The work-energy theorem-Archer",
+        "link": "https://cosci.tw/run/?name=PhzlN71632455566649",
+        "summary": "This simulation, titled 'The work-energy theorem-Archer,' provides an interactive environment for exploring the work-energy theorem through the context of an archer shooting an arrow. Users can manipulate parameters such as the force applied by the archer, the mass of the arrow, and the distance over which the force is applied to see how these factors affect the kinetic energy of the arrow. The simulation visually demonstrates the relationship between work done on the arrow and the resulting change in its kinetic energy, making it a valuable educational resource for understanding fundamental physics concepts related to energy transfer and mechanical work."
+    },
+    {
+        "title": "靜電場-電力線",
+        "link": "https://cosci.tw/run/?name=biVmsK1530665336392",
+        "summary": "本模擬『靜電場-電力線』是一個線上互動模擬實驗，讓使用者可以操作不同的帶電粒子，觀察其在空間所產生的電力線分佈，探索靜電場的基本原理。頁面上可放置正負電荷，並即時觀察電場線的變化，適合物理教學及自我學習。"
+    },
+    {
+        "title": "conservation of momentum-firework",
+        "link": "https://cosci.tw/run/?name=ZRDJ351494387621513",
+        "summary": "This simulation demonstrates the conservation of momentum using a firework example. It allows users to visually explore how momentum is conserved when a firework explodes into multiple pieces. The simulation provides interactive features to adjust initial conditions, such as velocity and mass, and observe the resulting motion of the fragments, helping users understand the fundamental physics principle of conservation of momentum in a dynamic and engaging way."
+    },
+    {
+        "title": "Uniform Circular Motion – Pikachu’s mission",
+        "link": "https://cosci.tw/run/?name=IJ6Gwb1626331637956",
+        "summary": "This interactive simulation, titled 'Uniform Circular Motion – Pikachu’s mission,' allows users to explore the principles of uniform circular motion. It features Pikachu moving in a circular path, helping students visualize concepts such as centripetal force, velocity, and angular displacement. The website is educational and designed for physics learners to experiment with variables and understand the mechanics of circular motion in an engaging way."
+    },
+    {
+        "title": "1D Collision Simulation",
+        "link": "https://cosci.tw/run/?name=trxBIp1466489722825",
+        "summary": "This website hosts a simulation that visually demonstrates one-dimensional collisions between objects. Users can adjust the mass and initial velocity of two objects, observe how they collide, and analyze results based on principles of conservation of momentum and energy. The simulation is useful for physics education, allowing users to explore both elastic and inelastic collisions with interactive visual feedback."
+    },
+    {
+        "title": "Buoyancy - Giant Waterlily Simulation",
+        "link": "https://cosci.tw/run/?name=kL8xKS1642996524514",
+        "summary": "This interactive simulation allows users to explore the principles of buoyancy using the example of a giant waterlily. Users can adjust parameters such as the mass and area of the waterlily as well as the load placed on it, and observe how these changes affect whether the lily floats or sinks. It's ideal for students or anyone interested in understanding Archimedes' principle and fluid physics in a hands-on way."
+    },
+    {
+        "title": "雙氧水實驗-反應速率",
+        "link": "https://cosci.tw/run/?name=SUdssT1702968138588",
+        "summary": "This online simulation titled '雙氧水實驗-反應速率' (Hydrogen Peroxide Experiment - Reaction Rate) allows users to explore how the reaction rate of hydrogen peroxide decomposition is affected by various factors. Users can adjust experimental parameters, observe outcomes, and analyze how changes such as temperature, catalyst presence, and concentration influence the rate of reaction. It is intended as an educational tool for understanding chemical kinetics."
+    },
+    {
+        "title": "光的反射遊戲",
+        "link": "https://cosci.tw/run/?name=7A5Z5d1678257375588",
+        "summary": "此網站提供一個名為「光的反射遊戲」的線上互動模擬。使用者可以透過該模擬操作光線經過不同鏡面時的反射現象，觀察入射角與反射角的變化，適合用於光學反射原理的學習或教學輔助。操作簡單、即時互動，可增進對光的反射定律的理解。"
+    },
+    {
+        "title": "Horizontal Projectile Motion: Airplane Bombing",
+        "link": "https://cosci.tw/run/?name=yrgxC11462416167445",
+        "summary": "This interactive simulation demonstrates the physics of horizontal projectile motion using the example of an airplane releasing a bomb. Users can visualize how the bomb follows a parabolic path under the influence of gravity after being released from a moving aircraft. Key variables such as speed and altitude can typically be adjusted to observe their effects on the bomb's trajectory. The simulation aims to help users understand concepts related to projectile motion and the influence of initial velocity and gravity."
+    },
+    {
+        "title": "Thin Convex Lens Set – Microscopes and Telescopes",
+        "link": "https://cosci.tw/run/?name=AhCi931576724920734",
+        "summary": "This interactive simulation allows users to explore the principles of thin convex lenses as applied in microscopes and telescopes. Users can adjust object positions, lens focal lengths, and observe image formation. The tool is educational, helping visualize how convex lenses magnify objects and form real or virtual images in optical instruments."
+    },
+    {
+        "title": "Reflection-Image formation by mirror",
+        "link": "https://cosci.tw/run/?name=XBpdPA1533533872207",
+        "summary": "This interactive simulation demonstrates how image formation occurs via reflection in a mirror. Users can manipulate the position of objects and observe how their reflected images behave, providing visual and conceptual understanding of mirror reflection principles, ray diagrams, and the relationship between object distance and image location."
+    },
+    {
+        "title": "Get wetter if you run?",
+        "link": "https://cosci.tw/run/?name=nkmEBy1506645045034",
+        "summary": "This simulation explores the classic question: do you get wetter when you walk or run in the rain? Users can adjust variables such as rain speed, running speed, and duration to observe how these factors influence how much rain hits them. The simulation visually represents the rain, your movement, and calculates the total exposure to rain under different scenarios."
+    },
+    {
+        "title": "Refraction - Thin Convex Lens Simulation",
+        "link": "https://cosci.tw/run/?name=NZR8s61534208656624",
+        "summary": "This website offers an interactive simulation focused on the behavior of light when passing through a thin convex lens. Users can manipulate variables such as object distance, lens focal length, and screen position to observe changes in image formation, including image size, orientation, and location. The simulation visually demonstrates key concepts in optics such as refraction, real and virtual images, and lens formulas, making it a valuable tool for students and educators studying physics."
+    },
+    {
+        "title": "Exploration of Horizontal Projectile Motion",
+        "link": "https://cosci.tw/run/?name=5HvAW21471230280549",
+        "summary": "This interactive simulation allows users to explore the concepts of horizontal projectile motion. Users can adjust initial conditions such as velocity and height, and observe the resulting trajectory of a projectile. The platform visualizes the motion, enabling learners to see how gravity and initial force affect the path of the object. It is useful for students and educators aiming to understand or demonstrate the principles of projectile motion in a physics context."
+    },
+    {
+        "title": "Frictional and centripetal forces - Car rounding a curve",
+        "link": "https://cosci.tw/run/?name=oDie2p1630036060549",
+        "summary": "This interactive simulation allows users to explore the physics of a car rounding a curve, focusing on the effects of frictional and centripetal forces. Users can adjust factors such as the car's speed, mass, and radius of the curve, and observe how these changes affect the dynamics of the situation. The simulation visually demonstrates the balance between friction and centripetal force, and is a valuable educational tool for understanding the mechanics behind turning vehicles."
+    },
+    {
+        "title": "雙星",
+        "link": "https://cosci.tw/run/?name=yTcHCm1727112023336",
+        "summary": "The website hosts an interactive simulation titled '雙星' (Double Stars in English). This simulation appears to visualize the dynamics and movement of a binary star system, allowing users to observe or manipulate how two stars interact with each other gravitationally. The platform is likely used for educational purposes, helping users understand orbital mechanics through visual exploration."
+    },
+    {
+        "title": "質心與動量守恆A-探討",
+        "link": "https://cosci.tw/run/?name=7zsftw1479866044375",
+        "summary": "此模擬活動『質心與動量守恆A-探討』由科學模擬網（cosci.tw）提供，主要針對高中或大學基礎物理課程設計，用於幫助學生理解質心(Center of Mass)以及動量守恆(Momentum Conservation)的科學原理。透過動畫互動與數據記錄，學生可觀察不同質量物體於碰撞過程中質心與動量的變化，並進行相關探究與討論。此模擬可作為物理教學補充課程或自主學習資源。"
+    },
+    {
+        "title": "Bomber Mission-Fun",
+        "link": "https://cosci.tw/run/?name=KAusTg1465025225265",
+        "summary": "\"Bomber Mission-Fun\" is an online simulation game where players participate in a bomber mission scenario. The game typically involves piloting a bomber aircraft, completing various objectives, and dodging obstacles or enemies to achieve a high score. The simulation provides interactive gameplay and is hosted on CoscI.tw, offering entertainment and strategic challenges for players."
+    },
+    {
+        "title": "Frictional and centripetal forces: Radius of rounding a curve",
+        "link": "https://cosci.tw/run/?name=lrWm7F1633482367522",
+        "summary": "This interactive simulation explores the relationship between frictional and centripetal forces when a vehicle rounds a curve. By adjusting parameters such as speed, friction coefficient, and curve radius, users can visually see how these factors affect the ability of a vehicle to safely navigate a curved path without slipping. The tool is targeted at students learning concepts in physics related to circular motion and forces."
+    },
+    {
+        "title": "物品的顏色",
+        "link": "https://cosci.tw/run/?name=1CW3ld1683252577531",
+        "summary": "這個線上模擬實驗主要展示了物品表面顏色產生的原因。使用者可以改變光源顏色、物體顏色與觀察背景，觀察不同情況下物品呈現的顏色變化。該模擬有助於理解顏色混合、反射原理，以及人眼對不同顏色的感知，適合中學以上理科教學用途。"
+    },
+    {
+        "title": "Resistance Experiments - CoSci",
+        "link": "https://cosci.tw/run/?name=M8WAL41676427975041",
+        "summary": "This interactive simulation, titled 'Resistance Experiments,' is hosted on the CoSci platform. The simulation allows users to investigate and experiment with the concept of electrical resistance in circuits. Users can manipulate variables such as voltage, resistance, and circuit configuration to observe their effects on current and other properties, making it a valuable tool for learning and teaching fundamental principles of electricity."
+    },
+    {
+        "title": "Refraction - Thin Concave Lens Simulation",
+        "link": "https://cosci.tw/run/?name=PKsqhO1535007335504",
+        "summary": "This interactive simulation allows users to explore the refraction of light through a thin concave lens. Users can adjust various parameters such as the angle of incidence, lens curvature, and object position to observe how the light rays bend and how the image forms. The simulation is suitable for educational purposes, helping students better understand the principles of optics and lens behavior."
+    },
+    {
+        "title": "完全彈性碰撞-二維",
+        "link": "https://cosci.tw/run/?name=hykE3e1447137723276",
+        "summary": "這個網頁提供一個二維空間下的完全彈性碰撞模擬。用戶可以觀察兩個物體在碰撞過程中的動量和能量守恆，並透過調整初始條件來理解碰撞的物理行為。模擬以圖形方式展示物體運動軌跡，適合作為物理學習的輔助工具。"
+    },
+    {
+        "title": "Projectiles – A Game of Life and Death",
+        "link": "https://cosci.tw/run/?name=erXG4d1488334662640",
+        "summary": "Projectiles – A Game of Life and Death is an interactive simulation that allows users to experiment with the basic physics of projectile motion. It is designed to visualize how different initial conditions (such as angle, speed, and gravity) affect the trajectory and outcome of projectiles. The simulation provides educational insights into physics concepts and offers a playful, game-like environment for learning and exploration."
+    },
+    {
+        "title": "Radioactive Decay Simulation",
+        "link": "https://cosci.tw/run/?name=ky29pA1642424677400",
+        "summary": "This interactive simulation models the process of radioactive decay. Users can visualize how unstable atomic nuclei transform over time, emitting radiation and changing into different elements. The interface allows for adjusting parameters such as half-life and initial sample size to observe their effects on the decay curve. The simulation is suitable for educational purposes, helping learners understand the randomness and statistical nature of radioactive decay with real-time graphical and numerical data outputs."
+    },
+    {
+        "title": "由不同角度觀察直線波前",
+        "link": "https://cosci.tw/run/?name=uzqFLB1690515317753",
+        "summary": "這個模擬實驗（由不同角度觀察直線波前）來自cosci.tw，讓使用者從不同觀察角度觀察直線波的波前變化。界面上可改變觀察者的位置，並動態顯示波前如何隨著觀察點變化，有助於理解波動現象中的觀察者效應和相對運動對波前的影響。適合物理學習者探討波動基本原理。"
+    },
+    {
+        "title": "Constant Velocity & Free Fall Fun",
+        "link": "https://cosci.tw/run/?name=6vTPC71469431073040",
+        "summary": "This online simulation allows users to explore basic motion concepts in physics, specifically constant velocity motion and free fall. It provides interactive tools for experimenting with parameters like speed, initial height, and gravity, making it suitable for students practicing kinematics or anyone interested in fundamental motion scenarios. The simulation visually demonstrates how changes in variables affect an object's motion, supporting both qualitative and quantitative learning."
+    },
+    {
+        "title": "Perfectly Inelastic Collision - Bullet Speed Simulation",
+        "link": "https://cosci.tw/run/?name=3tJg4T1447212909081",
+        "summary": "This simulation demonstrates a physics experiment involving a perfectly inelastic collision, where a bullet is fired into a block and the two objects stick together after the collision. The simulation allows users to explore concepts such as momentum conservation and to calculate the bullet's speed before the collision based on input parameters like masses and measured heights. It is designed as an interactive learning tool for students studying mechanics or collision theory."
+    },
+    {
+        "title": "Standing wave",
+        "link": "https://cosci.tw/run/?name=G1vsd71480928021176",
+        "summary": "This website hosts an interactive simulation of standing waves. Users can explore the principles of wave formation, node and antinode placement, and how varying parameters like frequency and amplitude affect the resulting wave pattern. The simulation is designed to support education in physics, particularly in understanding the characteristics and behavior of standing waves in different scenarios."
+    },
+    {
+        "title": "牛頓第二定律 (Newton's Second Law)",
+        "link": "https://cosci.tw/run/?name=bcucGk1695780985971",
+        "summary": "這個網頁是一個關於牛頓第二定律的互動模擬實驗。使用者可以在模擬中自由調整質量、力的大小，觀察不同條件下物體的加速度變化，直觀體驗F=ma的物理意義，適合物理教學與自學使用。"
+    },
+    {
+        "title": "視重與實重（Apparent vs. Real Weight） Simulation",
+        "link": "https://cosci.tw/run/?name=i2CNe11683181244753",
+        "summary": "This simulation explores the difference between apparent weight (視重) and real weight (實重). It allows users to experiment with scenarios—like elevators in motion—to observe how forces result in changes to the apparent weight experienced, compared to the actual (real) weight. It's designed as an educational tool for physics and science students to visualize and understand concepts related to gravity, normal force, and acceleration."
+    },
+    {
+        "title": "Simple harmonic motion - Spring and uniform circular motion",
+        "link": "https://cosci.tw/run/?name=q66rMD1450771460693",
+        "summary": "This interactive simulation visualizes the connection between simple harmonic motion (SHM) of a spring and uniform circular motion. Users can manipulate parameters such as amplitude, frequency, and phase to observe how the motion of an oscillating mass on a spring relates to the projection of a point moving in a circle. The simulation aids in understanding the mathematical and physical relationships between these foundational mechanics concepts."
+    },
+    {
+        "title": "Free Fall - Which Will Hit the Ground First?",
+        "link": "https://cosci.tw/run/?name=G1XFBR1490679952011",
+        "summary": "This interactive simulation explores the physics of free fall by allowing users to compare which object will hit the ground first when released from the same height. The simulation demonstrates that, neglecting air resistance, all objects in free fall accelerate at the same rate due to gravity and will hit the ground simultaneously. It is a useful educational tool for understanding basic kinematic principles and debunking common misconceptions about gravity and falling objects."
+    },
+    {
+        "title": "Gravity-Binary star motion and orbit",
+        "link": "https://cosci.tw/run/?name=BrJ6wy1645777304699",
+        "summary": "This online simulation explores the gravitational interaction and orbital motion between binary stars. Users can visualize and manipulate parameters such as mass, separation, and velocity to see how two stars orbit each other according to Newtonian gravity. The simulation aids in understanding orbital mechanics and binary star systems by providing real-time graphical representations of their paths and behaviors."
+    },
+    {
+        "title": "逆坡而上的雙圓錐體",
+        "link": "https://cosci.tw/run/?name=Xb1A3k1724674669798",
+        "summary": "這個網站展示了一個有趣的物理現象『逆坡而上的雙圓錐體』。在這個模擬中，雙圓錐體似乎違反直覺地沿著傾斜軌道逆坡上升。事實上，這個現象可以由重心變化與能量守恆解釋。網站提供了互動式模擬，讓使用者觀察與理解這一物理現象的原理，非常適合物理教學及自主學習。"
+    },
+    {
+        "title": "質心與動量守恆B-fun",
+        "link": "https://cosci.tw/run/?name=8qB9Vu1479191436748",
+        "summary": "本網站提供有關質心與動量守恆的模擬實驗平台，使用者可以通過操作模擬物體進行碰撞實驗，觀察不同條件下質心運動和動量變化，適合用於物理教學與學習。網站介面簡單易用，並提供模擬結果數據以供分析。"
+    },
+    {
+        "title": "String Wave - Amplitude, Frequency, and Wave Velocity Simulation",
+        "link": "https://cosci.tw/run/?name=XAZyrd1603352481056",
+        "summary": "This interactive simulation allows users to experiment with a virtual string wave by adjusting its amplitude, frequency, and wave velocity. The simulation visually demonstrates how these parameters affect the characteristics of wave motion on a string, making it useful for learning and teaching concepts in physics related to wave behavior."
+    },
+    {
+        "title": "Simple Model of Transmission A",
+        "link": "https://cosci.tw/run/?name=AGlHno1588124081324",
+        "summary": "This website hosts an interactive simulation titled 'Simple Model of Transmission A.' The simulation allows users to explore the dynamics of how something (such as a disease or information) spreads within a population. Typically, such models let users adjust parameters like infection rate and recovery rate, and visualize the results over time through graphs or animations, making it an educational tool for understanding transmission processes."
+    },
+    {
+        "title": "滑車接拋體-斜面",
+        "link": "https://cosci.tw/run/?name=trOpda1443075450730",
+        "summary": "這個線上模擬活動展示一個滑車從斜面滑下，並將一個物體發射出去的物理過程。使用者可以調整斜面的角度、高度和滑車的質量，觀察拋射體的運動軌跡，理解能量轉換、動量守恆以及拋體運動等物理原理。適合用於物理學習、教學及實驗模擬。"
+    },
+    {
+        "title": "彈性碰撞與拋射fun",
+        "link": "https://cosci.tw/run/?name=cdOUEX1477454264167",
+        "summary": "這個網站提供了一個互動式物理模擬，主要針對彈性碰撞和斜拋運動。用戶可以調整物體的質量、速度及角度，觀察碰撞與拋射過程的變化，並即時看到軌跡與物理量的變化結果，適合物理學習與直觀理解碰撞及拋體運動原理。"
+    },
+    {
+        "title": "功能定理-施力作功",
+        "link": "https://cosci.tw/run/?name=zubBTN1700018626076",
+        "summary": "This is an interactive physics simulation focused on the Work-Energy Theorem. Users can explore the relationship between the work done by a force and the change in kinetic energy of an object. The simulation provides visualizations, adjustable parameters, and explanations, making it suitable for learning and teaching basic mechanics concepts in physics."
+    },
+    {
+        "title": "Can You Brake in Time?",
+        "link": "https://cosci.tw/run/?name=Blq6yG1456991598905",
+        "summary": "This interactive simulation tests your reaction time and ability to brake a vehicle in time to avoid an obstacle. The exercise mimics real-life scenarios where quick responses are necessary to prevent accidents. Users are prompted to react as quickly as possible when an unexpected object appears in their lane, highlighting the importance of alertness and proper following distances while driving."
+    },
+    {
+        "title": "Pressure-Shape and density",
+        "link": "https://cosci.tw/run/?name=zcFLzI1551239868674",
+        "summary": "This interactive simulation explores the relationship between pressure, object shape, and density. Users can manipulate different variables such as the shape and density of objects to observe how these factors influence pressure. The tool is designed for educational purposes, helping students visualize and understand the physics behind pressure in various contexts."
+    },
+    {
+        "title": "Refraction of Light: Snell’s Law",
+        "link": "https://cosci.tw/run/?name=CgKQP61511236145034",
+        "summary": "This interactive simulation allows users to explore how light bends, or refracts, when it passes from one medium to another using Snell’s Law. Users can adjust the angles of incidence and observe the resulting angles of refraction. The simulation visually demonstrates the relationship between the incident and refracted rays, the indices of refraction of different materials, and Snell's Law equation. It's a valuable educational tool for understanding the basic physics of refraction in a hands-on way."
+    },
+    {
+        "title": "Newtonian Cooling-Specific Heat Simulation",
+        "link": "https://cosci.tw/run/?name=GToXWT1667956635617",
+        "summary": "This website features an interactive simulation that demonstrates the principle of Newtonian cooling and investigates the specific heat of materials. Users can manipulate parameters such as the initial temperature, ambient temperature, cooling constant, and observe the cooling curve as a function of time. The simulation helps users understand how different materials cool at different rates, illustrating the relationship between temperature change, specific heat, and thermal conductivity."
+    },
+    {
+        "title": "酸鹼中和-強酸強鹼(基礎)",
+        "link": "https://cosci.tw/run/?name=Z4XfkV1661737630166",
+        "summary": "This simulation allows users to explore the process of acid-base neutralization specifically between strong acids and strong bases. It provides an interactive environment for students or learners to visualize what happens when equivalent amounts of a strong acid and a strong base are mixed, demonstrating changes such as pH shifts and the resulting neutral solution. The platform is aimed at foundational chemistry learners, making abstract concepts more tangible through virtual experiments."
+    },
+    {
+        "title": "向心力與摩擦係數探討",
+        "link": "https://cosci.tw/run/?name=tMrtsl1454481757849",
+        "summary": "這個線上模擬網站，讓使用者探討物體在圓周運動時的向心力與摩擦係數之間的關係。用戶可設定不同的摩擦係數、半徑及質量等參數，觀察當物體以不同速度運動時是否能維持在圓形軌道上而不滑動。該模擬有助於學生理解摩擦力、向心力與加速度之間的物理概念。"
+    },
+    {
+        "title": "The work-energy theorem-Archer advanced",
+        "link": "https://cosci.tw/run/?name=Oucwhc1628565079109",
+        "summary": "This simulation explores the work-energy theorem using an archer scenario. Users can interact with the simulation to understand how work performed by an archer is converted into kinetic energy, following the work-energy theorem. It offers a hands-on, visual way to grasp fundamental physics concepts related to force, work, and energy transfers."
+    },
+    {
+        "title": "Magnetism - Magnetic field produced by electric current (solenoid)",
+        "link": "https://cosci.tw/run/?name=pKFpq61564627511640",
+        "summary": "This simulation explores how a magnetic field is produced by an electric current flowing through a solenoid. Users can visualize the magnetic field lines around the solenoid, experiment with current direction and intensity, and observe changes in the resulting magnetic field. The tool is designed for educational purposes, making the principles of electromagnetism and solenoids accessible for both students and teachers."
+    },
+    {
+        "title": "Free-Fall from Tower of Pisa Simulation",
+        "link": "https://cosci.tw/run/?name=quD7Nn1489973539541",
+        "summary": "This interactive simulation demonstrates the concept of free-fall as famously experimented by Galileo from the Leaning Tower of Pisa. Users can model the effect of gravity on objects of different masses, observing how they fall without air resistance. The simulation allows users to change variables like object mass and drop height, providing a hands-on understanding of basic physics principles such as acceleration due to gravity and the independence of mass in free-fall motion."
+    },
+    {
+        "title": "Magnetic field-Magnet bar",
+        "link": "https://cosci.tw/run/?name=q20dd71561598831554",
+        "summary": "This online simulation, \"Magnetic field-Magnet bar,\" allows users to visualize and explore the magnetic field generated by a bar magnet. The interactive simulation shows the field lines around the magnet, helping users understand the direction and intensity of the magnetic forces. It's an educational tool suitable for students learning about magnetism and electromagnetic theory, providing a hands-on way to observe theoretical concepts in action."
+    },
+    {
+        "title": "Buoyancy—How Much Does the Elephant Weigh?",
+        "link": "https://cosci.tw/run/?name=estOr31522118371975",
+        "summary": "This simulation explores the concept of buoyancy by challenging users to estimate the weight of an elephant using the principle of water displacement. Users interact with the setup, observe how much water is displaced when the elephant is submerged, and apply Archimedes' principle to determine the elephant's weight. The activity is designed to help students understand the relationship between object weight, fluid displacement, and buoyant force in a hands-on, visual context."
+    },
+    {
+        "title": "Gravitational Force on Earth's Surface",
+        "link": "https://cosci.tw/run/?name=Plr6hg1452128704066",
+        "summary": "This online simulation allows users to visualize and calculate gravitational force on the Earth's surface. It demonstrates how the force of gravity is determined by Earth’s mass and radius and lets users interactively change variables to see their impact on gravitational acceleration (g). It is designed for educational purposes, suitable for students learning about gravity, physics, or Earth science."
+    },
+    {
+        "title": "Elastic Collision: Cube and Spring A",
+        "link": "https://cosci.tw/run/?name=Bt93wH1497249129898",
+        "summary": "This interactive simulation demonstrates elastic collisions between a cube and a spring. Users can observe how momentum and energy are conserved in the system when the cube collides with the spring. The tool allows for adjustments of mass, initial velocity, and spring constants to explore different physical scenarios and outcomes, making it useful for teaching and learning fundamental concepts in physics."
+    },
+    {
+        "title": "Electrostatic Field: Point Charges",
+        "link": "https://cosci.tw/run/?name=qqPPXf1530496296402",
+        "summary": "This interactive simulation allows users to visualize and explore electrostatic fields generated by point charges. Users can adjust the positions and magnitudes of multiple point charges to observe resulting changes in the electric field, electric potential, and force interactions. The tool offers real-time feedback, making it ideal for learning fundamental concepts in electrostatics such as field lines, superposition, and the nature of the forces between charged particles."
+    },
+    {
+        "title": "Which Slingshot Should You Pick?",
+        "link": "https://cosci.tw/run/?name=dUTRcV1507689361976",
+        "summary": "This simulation helps users explore the physics behind slingshots by letting them compare different types and settings to determine which is best for launching a projectile. Users can modify variables like the slingshot's stretch, angle, and materials to observe how these changes affect the trajectory and distance. It's an interactive educational tool for understanding force, energy, and projectile motion."
+    },
+    {
+        "title": "浮力探究-基礎",
+        "link": "https://cosci.tw/run/?name=R3SSM01685413713533",
+        "summary": "這個網站提供了一個互動式的『浮力探究-基礎』仿真模擬實驗。使用者可以透過這個模擬器操作物體在液體中的狀態，觀察浮力大小的變化，並進行與阿基米德原理相關的實驗探索，非常適合學生進行浮力基礎概念的理解與練習。"
+    },
+    {
+        "title": "力學能-水平彈簧",
+        "link": "https://cosci.tw/run/?name=XRSmQd1520471188683",
+        "summary": "This is an interactive physics simulation focused on mechanical energy in a horizontal spring system. Users can explore the principles of conservation of energy, kinetic energy, and potential energy as they manipulate variables such as mass, spring constant, and initial displacement. The simulation visually demonstrates how these factors affect the motion and energy transformations of the spring system."
+    },
+    {
+        "title": "完全非彈性碰撞-一維EXP",
+        "link": "https://cosci.tw/run/?name=5g8CFI1515985952004",
+        "summary": "這個網頁提供一個模擬『完全非彈性碰撞』的物理實驗，針對一維方向的運動。使用者可以自行設定質量與速度，觀察兩物體碰撞後會合成一個共同運動的結果。模擬展示了動量守恆與能量損失等相關物理概念，適合物理教學或自我學習使用。"
+    },
+    {
+        "title": "Magnetism-Electric motor A",
+        "link": "https://cosci.tw/run/?name=ChpZFc1566194730438",
+        "summary": "This simulation demonstrates the principles of magnetism and how they apply to the operation of an electric motor. The interactive site allows users to visualize the interaction between magnetic fields, current-carrying wires, and rotational motion, helping users understand the fundamental physics behind electric motors. Users can adjust variables and observe effects in real-time, making it suitable for both education and self-exploration."
+    },
+    {
+        "title": "Center of Mass and Circular Motion - 2-Body System Simulation",
+        "link": "https://cosci.tw/run/?name=3nPTax1495777740581",
+        "summary": "This website provides an interactive physics simulation focused on a two-body system, allowing users to explore concepts such as the center of mass and circular motion. The simulation visually represents two masses in orbit, so users can observe how their positions, orbits, and the system’s center of mass change based on different parameters. The interface often includes options to adjust mass values, radii, and angular velocities, making it a useful tool for students and educators studying classical mechanics."
+    },
+    {
+        "title": "Ramp and Friction - Which One Goes First?",
+        "link": "https://cosci.tw/run/?name=nGCCT01513557173079",
+        "summary": "This interactive simulation allows users to explore the effects of ramp incline and surface friction on the motion of objects. By adjusting the slope and surface texture, users can observe and compare how different objects slide down the ramp, helping to determine which will reach the bottom first. This experiment is ideal for learning about physics concepts such as gravity, friction, and acceleration."
+    },
+    {
+        "title": "Work-energy theorem- beer-pushing game",
+        "link": "https://cosci.tw/run/?name=CXGrH91571014803117",
+        "summary": "The 'Work-energy theorem- beer-pushing game' is an interactive physics simulation that demonstrates the principles of the work-energy theorem through a playful scenario where the user pushes a beer mug. This simulation helps visualize and understand how work done on an object transforms into kinetic energy, making core physics concepts more tangible and engaging through gamified learning."
+    },
+    {
+        "title": "Moon phases and positions",
+        "link": "https://cosci.tw/run/?name=UCOGJt1616398787658",
+        "summary": "This interactive simulation demonstrates the phases of the Moon and its positions relative to the Earth and Sun. Users can manipulate the model to see how changes in the Moon's orbit result in different lunar phases observed from Earth. The tool is useful for visualizing concepts such as new moon, crescent, quarter, gibbous, and full moon, along with the corresponding solar and lunar positions."
+    },
+    {
+        "title": "Simple Sea-Land Breezes Model - Temperature Difference",
+        "link": "https://cosci.tw/run/?name=xXhLQw1544152608046",
+        "summary": "This interactive simulation demonstrates the formation of sea and land breezes based on temperature difference between land and sea surfaces. Users can alter parameters such as time of day and temperature values to see how thermal gradients influence wind patterns along coastlines. The tool is useful for visualizing and understanding basic meteorological principles driving coastal breezes."
+    },
+    {
+        "title": "光的折射-薄凹透鏡(新增平行光模式及關閉部分光路功能)",
+        "link": "https://cosci.tw/run/?name=EECH841724648555727",
+        "summary": "這個網站提供一個關於光的折射現象，特別是薄凹透鏡的互動式模擬。用戶可操作平行光模式，並可選擇顯示或隱藏部份光路，幫助理解光線在透鏡中的折射路徑與成像原理。模擬適合物理教學與自學。"
+    },
+    {
+        "title": "波的形成",
+        "link": "https://cosci.tw/run/?name=oNAauQ1466566467642",
+        "summary": "This simulation, titled \"波的形成\" (Formation of Waves), is hosted on the Cosci.tw science simulation platform. It visually demonstrates how waves are formed and propagate, typically using interactive graphics. The simulation likely allows users to modify parameters influencing wave generation, making it useful for learners and educators investigating the basics of wave mechanics."
+    },
+    {
+        "title": "Friction on the Incline Plane Simulation",
+        "link": "https://cosci.tw/run/?name=AOCOcU1444632065934",
+        "summary": "This interactive simulation helps users visualize and understand the effects of friction on an object placed on an inclined plane. The user can adjust variables such as the angle of the incline, the mass of the object, and the friction coefficient to see how these factors influence the motion of the object. The simulation is useful for physics students learning about frictional forces and inclined planes, providing real-time graphical feedback and measurements."
+    },
+    {
+        "title": "光電效應 模擬",
+        "link": "https://cosci.tw/run/?name=n8Vko31735563457497",
+        "summary": "這個網站提供了一個關於光電效應（Photoelectric Effect）的互動式模擬。使用者可以調整不同的參數（如入射光的顏色、強度等），觀察金屬釋放電子的現象，並了解光電效應的基本原理，是學習現代物理和能量量子化的一個有用工具。"
+    },
+    {
+        "title": "Magnetic field-Magnet bar2",
+        "link": "https://cosci.tw/run/?name=rdxEBn1646366850092",
+        "summary": "This online simulation demonstrates the magnetic field generated by a bar magnet. Users can interact with the simulation to see how the magnetic field lines are oriented around the bar magnet and observe the effects of moving the magnet or changing its properties. It's designed as an educational tool for exploring magnetic fields visually and intuitively."
+    },
+    {
+        "title": "淋到多少雨探究（Getting Wet in the Rain Simulation）",
+        "link": "https://cosci.tw/run/?name=VTallz1557283614222",
+        "summary": "This simulation, titled '淋到多少雨探究' (Exploring How Much Rain You Get Wet In), allows users to investigate the factors affecting how much rain a person gets wet in when moving in rain. Users can manipulate variables such as walking speed and direction relative to rainfall, and observe the resulting exposure to raindrops. The simulation provides a visual and interactive way to explore physics concepts related to rain, motion, and exposure."
+    },
+    {
+        "title": "質心與動量守恆-fun",
+        "link": "https://cosci.tw/run/?name=BAG6hK1463466164771",
+        "summary": "This simulation named '質心與動量守恆-fun' (Center of Mass and Momentum Conservation - fun) is an interactive educational web tool designed to help users understand the principles of center of mass and conservation of momentum. It likely includes visual demonstrations, adjustable parameters, and scenarios to illustrate how momentum is conserved in different systems, making it an engaging way to learn physics concepts through experimentation."
+    },
+    {
+        "title": "Magnetism- Law of magnetic induction-Basic",
+        "link": "https://cosci.tw/run/?name=wGywXw1648561016524",
+        "summary": "This online interactive simulation offers a basic exploration of magnetism, specifically the law of magnetic induction. Users can interact with virtual magnets and coils to visualize electromagnetic induction, observing how changing magnetic fields generate electric currents. The simulation serves as an educational tool for understanding the fundamental principles behind Faraday's Law and electromagnetic devices in a hands-on learning environment."
+    },
+    {
+        "title": "摩擦力-牆面正向力A",
+        "link": "https://cosci.tw/run/?name=4X3tTQ1446789125873",
+        "summary": "本網站提供了一個名為「摩擦力-牆面正向力A」的物理互動模擬。透過這個模擬，使用者可以調整作用在物體上的外力、物體質量、粗糙係數等參數，觀察摩擦力、牆面正向力與其它相關物理量之間的關係。此模擬適合學生學習力學中摩擦力與正向力的概念，並可作為物理課程的教學輔助工具。"
+    },
+    {
+        "title": "Elastic Collision: Cube and Spring B",
+        "link": "https://cosci.tw/run/?name=wGTRIc1497421344369",
+        "summary": "This online physics simulation lets users explore elastic collisions involving a cube and a spring, allowing for interactive manipulation of variables and observation of resulting motion and energy exchanges. The tool is designed for educational purposes, helping users visualize and understand the principles of momentum and energy conservation in elastic collision scenarios."
+    },
+    {
+        "title": "Get Wetter If You Run? – 雨中奔跑大考驗",
+        "link": "https://cosci.tw/run/?name=y70Exe1505185678599",
+        "summary": "The website hosts an interactive physics simulation that explores the frequently asked question: 'Do you get wetter if you run in the rain instead of walking?' The tool allows users to adjust parameters like speed, rainfall angle, and more to see how they affect how wet you get in different scenarios. It’s a hands-on, experiment-like interface suitable for education or curiosity-driven exploration."
+    },
+    {
+        "title": "飛機連續投彈模擬",
+        "link": "https://cosci.tw/run/?name=QCzp8u1444198869504",
+        "summary": "這是一個飛機連續投彈的線上模擬網站。使用者可以模擬飛機以不同的速度、投彈間隔等設定，模擬炸彈從飛機下方連續落下，並觀察炸彈的拋物線軌跡及其在地面的落點分佈。該模擬適合物理教學、拋射運動實驗和學習基本物理概念如速度、加速度、重力等現象。"
+    },
+    {
+        "title": "Liquid Column Manometer Simulation",
+        "link": "https://cosci.tw/run/?name=U0VJgg1539652376198",
+        "summary": "This website hosts an interactive simulation of a liquid column manometer, a device used to measure pressure differences in fluids. The simulation allows users to adjust various parameters such as fluid density and column heights to observe how they influence the pressure readings, making it a useful educational tool for students and instructors studying fluid mechanics and pressure measurement."
+    },
+    {
+        "title": "質心與動量守恆-煙火fun",
+        "link": "https://cosci.tw/run/?name=frIhm91495086054892",
+        "summary": "這個模擬網站展示了質心與動量守恆的物理原理，透過煙火的爆炸過程做為實例，讓使用者可以互動操作和觀察爆炸前後物體的運動與質心變化及動量如何守恆，是適合教學和自學的物理模擬工具。"
+    },
+    {
+        "title": "Refraction - Where to Place the Net",
+        "link": "https://cosci.tw/run/?name=tvN7iL1511917540560",
+        "summary": "This simulation allows users to explore how the position of a net affects the refraction of light as it passes through different media. It gives a visual representation of light rays changing direction when transitioning between materials with different refractive indices, helping to illustrate concepts such as Snell's Law and angle of incidence versus refraction."
+    },
+    {
+        "title": "Get wetter if you run? (E2) - Science Simulation",
+        "link": "https://cosci.tw/run/?name=2TM21t1509325728788",
+        "summary": "This simulation explores whether a person gets wetter by running or walking in the rain. It provides a virtual environment where users can adjust variables such as speed, distance, and rainfall intensity, allowing them to test and visualize the outcomes. The simulation helps illustrate concepts in physics like relative motion, surface area exposure, and the impact of different choices on getting wet in the rain."
+    },
+    {
+        "title": "Buoyancy Submarine Simulation",
+        "link": "https://cosci.tw/run/?name=qnTUg21523322790760",
+        "summary": "This interactive simulation allows users to explore the concepts of buoyancy using a virtual submarine. Users can manipulate factors such as ballast, depth, and external pressure to see how they impact the submarine's ability to float or sink. The tool is suitable for both classroom demonstrations and individual exploration, providing a hands-on approach to understanding Archimedes' principle and buoyancy forces."
+    },
+    {
+        "title": "Coriolis force – capture Pikachu B",
+        "link": "https://cosci.tw/run/?name=mT4kpy1554943857558",
+        "summary": "This interactive simulation demonstrates the Coriolis force by challenging users to capture Pikachu while accounting for the effect of Earth's rotation. Users can experiment with different velocities and directions, observing how trajectory curves under the influence of the Coriolis effect, which is especially relevant for rotating systems like Earth."
+    },
+    {
+        "title": "Coriolis force - tossing a ball on a turntable",
+        "link": "https://cosci.tw/run/?name=gbTc2M1555403742398",
+        "summary": "This interactive simulation demonstrates the Coriolis force by allowing users to toss a ball on a rotating turntable. Users can observe how the path of the ball appears to curve due to the rotation, illustrating the effects of the Coriolis force as experienced in rotating reference frames such as Earth."
+    },
+    {
+        "title": "重力位能探討-打樁機fun",
+        "link": "https://cosci.tw/run/?name=g0VkST1642642278204",
+        "summary": "這個線上模擬網站以打樁機為例，讓使用者互動式地探討重力位能的變化。透過模擬，可以觀察打樁機如何將錘子舉起並釋放，進而撞擊地面樁子，展示重力位能轉換為動能的過程，幫助學生理解物理中的重力位能概念。"
+    },
+    {
+        "title": "The work-energy theorem-slingshotA",
+        "link": "https://cosci.tw/run/?name=NAxquT1634888562812",
+        "summary": "This interactive web simulation demonstrates the work-energy theorem using a slingshot as an example. Users can manipulate parameters and observe how energy is transferred and transformed as the slingshot is stretched and released. The simulation visually illustrates the relationships between force, work, kinetic energy, and potential energy, helping learners understand the core concepts of the work-energy theorem."
+    },
+    {
+        "title": "光的折射-薄凸透鏡(增加關閉部分光路功能)",
+        "link": "https://cosci.tw/run/?name=kDatCv1724648510940",
+        "summary": "這個模擬程式展示了光線通過薄凸透鏡時的折射現象。使用者可以觀察不同入射角下的光路變化，並能夠選擇開啟或關閉部分光路，以便於更清楚地觀看和分析光的折射與成像特性，適合物理教學或自學使用。"
+    },
+    {
+        "title": "拉力與摩擦力",
+        "link": "https://cosci.tw/run/?name=A1c31C1679879344137",
+        "summary": "這個網站提供一個名為「拉力與摩擦力」的互動式物理模擬活動。使用者可以透過模擬體驗並了解拉力和摩擦力在不同物體之間作用的物理現象。活動適合學生進行自主學習或教師作為教學輔助工具，透過調整參數來觀察力的變化與運動效果，加強對物理概念的理解。"
+    },
+    {
+        "title": "等速與等加速度運動-來得急剎車嗎-1",
+        "link": "https://cosci.tw/run/?name=AP0UD11659850721772",
+        "summary": "本網站提供一個物理模擬，主題為「等速與等加速度運動-來得急剎車嗎」。此模擬幫助學生理解速度與加速度的物理意義，並透過剎車問題，思考在不同運動狀態下能否及時停下。用戶可調整初速度、加速度等參數，觀察運動物體的行為和數據變化，非常適合教學與自我練習物理概念。"
+    },
+    {
+        "title": "碰撞合作二0806",
+        "link": "https://cosci.tw/run/?name=lLQt0t1438868993106",
+        "summary": "This is an interactive web-based simulation titled '碰撞合作二0806' hosted on cosci.tw. The simulation appears to explore concepts related to collision and cooperation, likely within a physics or educational context. Users can run the simulation scenario, which probably involves observing how objects interact or collide under various conditions, offering insights into cooperative effects during such physical interactions. The interface provides options for parameter adjustment and real-time visualization, making it suitable for learning or demonstration purposes."
+    },
+    {
+        "title": "Friction: How Far Can It Slide",
+        "link": "https://cosci.tw/run/?name=X8ZesJ1514868010748",
+        "summary": "This interactive simulation explores the physics of friction by letting users adjust variables and see how far different objects can slide along a surface. Users can manipulate the type of surface, the object's mass, and the initial velocity, allowing for experiments on how these factors affect sliding distance due to friction. The simulation is designed for educational purposes and helps visualize the concept of friction in a practical, hands-on way."
+    },
+    {
+        "title": "燈光與顏色遊戲",
+        "link": "https://cosci.tw/run/?name=S6ZM2I1673939403413",
+        "summary": "這是一個互動式的網頁模擬遊戲，名為「燈光與顏色遊戲」。使用者可以在此平台上嘗試不同燈光和顏色的組合，觀察它們如何混合並產生新的顏色效果。該模擬有助於理解色光三原色（紅、綠、藍）的疊加原理，以及顏色混合對感知的影響，適合科學教育與色彩學習應用。"
+    },
+    {
+        "title": "光的疊加",
+        "link": "https://cosci.tw/run/?name=531W581673918848609",
+        "summary": "這個線上模擬器展示了光的疊加現象，允許用戶觀察和探索多束光（如雷射）相互干涉和疊加後的結果。使用者可以調整光源角度、間距、波長等參數，觀察干涉紋的變化和波前分布，適合物理教學和學生自學光學疊加和干涉原理。介面互動且有即時圖形顯示。"
+    },
+    {
+        "title": "Buoyancy - Pushing a Volleyball into Water",
+        "link": "https://cosci.tw/run/?name=bT8gkt1671415616846",
+        "summary": "This interactive simulation demonstrates the principles of buoyancy by allowing users to push a virtual volleyball into water and observe the resulting forces. Users can manipulate variables and visually see how the volleyball behaves, illustrating key physics concepts such as buoyant force, Archimedes' Principle, and object equilibrium in fluids. The simulation is educational and suitable for students learning about fluid mechanics and buoyancy."
+    },
+    {
+        "title": "比熱與溫度變化(拖曳)",
+        "link": "https://cosci.tw/run/?name=48vSSh1537412804839",
+        "summary": "這個模擬『比熱與溫度變化(拖曳)』來自cosci.tw，讓使用者透過拖曳不同的物質並加入相同熱量，觀察它們的溫度變化。藉由此互動，可以了解不同物質的比熱及其對溫度改變的影響，適合於物理或科學教育使用，加深對比熱及熱量轉換概念的理解。"
+    },
+    {
+        "title": "Projectile Motion VS Free Fall - Crack Shot",
+        "link": "https://cosci.tw/run/?name=wkqxT61454382164948",
+        "summary": "This interactive simulation allows users to explore and compare projectile motion and free fall. By adjusting variables such as initial velocity and angle, users can visualize trajectories and analyze differences between an object fired horizontally and one in free fall. The tool is designed for educational purposes, helping learners understand core physics concepts related to motion and gravity."
+    },
+    {
+        "title": "Simple Model of Transmission (EXP)",
+        "link": "https://cosci.tw/run/?name=oQAOps1586330403413",
+        "summary": "This web-based simulation demonstrates a simple model of disease transmission in a population. Users can observe how infection spreads among individuals over time based on parameters such as initial infected population and transmission probability. The visualization allows users to explore how changing conditions affect the outbreak's trajectory, providing insights into epidemic modeling and preventive measures."
+    },
+    {
+        "title": "Pressure - Communicating vessel E",
+        "link": "https://cosci.tw/run/?name=E8aMpm1574128958863",
+        "summary": "This interactive simulation demonstrates the principles of pressure in communicating vessels. Users can observe how liquid levels balance out between connected containers, illustrating concepts such as hydrostatic pressure and Pascal's principle. The tool allows manipulation of different variables to help visualize how pressure equalizes in fluids that are connected, making it a valuable educational resource for understanding fundamental physics concepts."
+    },
+    {
+        "title": "Conservation of Momentum Simulation",
+        "link": "https://cosci.tw/run/?name=Fv0yrk1462772445401",
+        "summary": "This interactive simulation demonstrates the principle of conservation of momentum. Users can observe and manipulate scenarios where objects collide, seeing real-time changes in momentum and velocity. The tool is useful for understanding how momentum is conserved in isolated systems, making it ideal for physics education and experimentation."
+    },
+    {
+        "title": "Wave-Moving point source of wave",
+        "link": "https://cosci.tw/run/?name=V72vzN1626161391032",
+        "summary": "This web simulation visualizes the behavior of waves generated by a moving point source. Users can explore concepts such as the Doppler effect, wavefront distortion, and the relationship between source speed and observed frequency. The interface typically allows you to adjust parameters like the velocity of the source and observe the impact on the wave pattern in real time."
+    },
+    {
+        "title": "Pendulum Wave Simulation",
+        "link": "https://cosci.tw/run/?name=ZTSa261473747827063",
+        "summary": "This interactive simulation demonstrates the pendulum wave phenomenon. Users can observe multiple pendulums with slightly different lengths swinging together, creating mesmerizing wave patterns and visualizations of wave interference, phase difference, and synchronization. It is useful for exploring physics concepts related to periodic motion, waves, and oscillations."
+    },
+    {
+        "title": "Buoyancy-Submarine Fun",
+        "link": "https://cosci.tw/run/?name=lTJH1p1523590554942",
+        "summary": "This online simulation allows users to explore the concept of buoyancy by interacting with a virtual submarine. Users can experiment with the controls to make the submarine sink or float, mimicking the functioning of real-world submarines. The simulation provides a hands-on way to learn about the forces that affect buoyancy, such as gravity and fluid displacement."
+    },
+    {
+        "title": "物體加入液體後的溫度變化",
+        "link": "https://cosci.tw/run/?name=dlqmod1706454382861",
+        "summary": "這個模擬網站以互動方式呈現當一個物體加入液體後，兩者溫度如何經由熱傳遞達到熱平衡。使用者可以設定物體和液體的質量、初始溫度等參數，觀察最終的熱平衡溫度，適合用於教學物體與液體混合時的能量守恆與溫度變化原理。"
+    },
+    {
+        "title": "Simplified model of land and sea breeze",
+        "link": "https://cosci.tw/run/?name=DKJvSz1543971423768",
+        "summary": "This website features an interactive simulation that demonstrates the simplified model of land and sea breezes. Users can explore how temperature differences between land and sea create pressure gradients, resulting in the movement of air and the formation of breezes. The simulation allows for visual observation of the breeze patterns and provides educational insight into the underlying meteorological concepts."
+    },
+    {
+        "title": "Elastic Collision - Bouncing Balls Simulation",
+        "link": "https://cosci.tw/run/?name=boyvFs1453877322613",
+        "summary": "This interactive simulation demonstrates elastic collisions between bouncing balls. Users can observe in real-time how balls collide and transfer energy and momentum without loss, illustrating principles of conservation of energy and momentum. The website provides a visual and educational tool for understanding dynamics in physics, especially elastic collisions."
+    },
+    {
+        "title": "Pendulum Wave Simulation",
+        "link": "https://cosci.tw/run/?name=uaATOL1489368411662",
+        "summary": "This interactive simulation demonstrates the phenomenon of a pendulum wave, where several pendulums with progressively increasing lengths swing side-by-side. As they oscillate, their coordinated motion creates visually engaging wave-like patterns and illustrates the concepts of harmony, periodicity, and resonance in physics. Users can observe the cyclical alignment and separation of the pendulums' paths over time."
+    },
+    {
+        "title": "單擺-兩個單擺",
+        "link": "https://cosci.tw/run/?name=k2wyGt1628214589260",
+        "summary": "This is an interactive physics simulation focusing on two simple pendulums (“單擺-兩個單擺” means “Two Simple Pendulums” in Chinese). The website allows users to adjust parameters such as pendulum length, mass, and initial angle, and then observe how the pendulums oscillate over time. Visual tools and charts are provided to help understand the physics concepts behind pendulum motion, including period, amplitude, and energy transfer."
+    },
+    {
+        "title": "導體類型與歐姆定律",
+        "link": "https://cosci.tw/run/?name=T3bC811700712211366",
+        "summary": "這個網頁模擬提供關於『導體類型與歐姆定律』的互動教學工具。使用者可以操作和觀察不同導體（如金屬、鹽水等）下電流與電壓的關係，並了解歐姆定律（V=IR）在不同材質中如何展現。本模擬適合學生進行物理概念探究，加深對導體性質及基本電學定律的理解。"
+    },
+    {
+        "title": "Pressure-Pascal’s principle",
+        "link": "https://cosci.tw/run/?name=W4ZhTu1550885345644",
+        "summary": "This interactive simulation explores Pascal’s principle, which states that pressure applied to a confined fluid is transmitted undiminished in all directions throughout the fluid. The simulation allows users to manipulate variables such as force, area, and pressure, and observe the effects on a closed hydraulic system. It visually demonstrates how pressure changes operate in devices like hydraulic lifts, making it an educational tool for understanding this key concept in physics."
+    },
+    {
+        "title": "Voltage and electron flow",
+        "link": "https://cosci.tw/run/?name=3GhGer1637829944802",
+        "summary": "This interactive simulation demonstrates the relationship between voltage and the flow of electrons in a circuit. Users can adjust variables such as voltage and see in real time how electron movement is affected. The simulation is likely aimed at helping users understand basic concepts in electricity and circuits, making it a valuable tool for students and educators in physics or general science courses."
+    },
+    {
+        "title": "Arrive at the same time - COSCI Simulation",
+        "link": "https://cosci.tw/run/?name=ip4FAL1455671259762",
+        "summary": "This simulation, hosted by COSCI, is designed to explore or model situations where multiple entities attempt to 'arrive at the same time.' It likely allows users to investigate the dynamics, rules, or mathematics behind synchronized arrival events, which could be relevant in areas such as computing, traffic systems, or social coordination. The platform may present visualization tools, interactive experiments, or educational resources to help users understand the concept."
+    },
+    {
+        "title": "耦合擺6 (Coupled Pendulum 6)",
+        "link": "https://cosci.tw/run/?name=O88csw1724337225041",
+        "summary": "The '耦合擺6' (Coupled Pendulum 6) simulation on cosci.tw allows users to explore the dynamics of a system of six coupled pendulums. The simulation visually demonstrates how the pendulums interact through coupling, showing phenomena such as synchronization and energy transfer between them. Users can modify parameters and observe real-time effects, making it a useful educational tool for understanding coupled oscillatory systems in physics."
+    },
+    {
+        "title": "Density and Buoyancy Simulation",
+        "link": "https://cosci.tw/run/?name=ZI0dVX1521518337667",
+        "summary": "This interactive simulation allows users to explore the concepts of density and buoyancy. Users can manipulate variables such as the type of fluid, the object being submerged, and its density to observe how these changes affect whether the object floats or sinks. The simulation visually demonstrates buoyant force and helps reinforce understanding of Archimedes’ principle in a hands-on, visual manner."
+    },
+    {
+        "title": "Buoyancy: Two Liquids",
+        "link": "https://cosci.tw/run/?name=wf7Wog1498539843396",
+        "summary": "This interactive simulation allows users to explore the concept of buoyancy involving two different immiscible liquids. Users can experiment by adjusting variables such as the densities of the two liquids, the density of the object, and observe how the object behaves (floats or sinks) in the system. The simulation visually demonstrates Archimedes' Principle and helps understand how objects can float at the interface between two liquids depending on their relative densities."
+    },
+    {
+        "title": "Transverse waves and longitudinal waves",
+        "link": "https://cosci.tw/run/?name=l8rAwK1467001113688",
+        "summary": "This interactive simulation demonstrates the properties of transverse and longitudinal waves. Users can visualize the differences between these two types of mechanical waves, observe how particles move in each case, and adjust parameters such as amplitude and frequency to see their effects on wave motion."
+    },
+    {
+        "title": "單擺-週期 (Simple Pendulum - Period)",
+        "link": "https://cosci.tw/run/?name=k1QWcn1452734531585",
+        "summary": "This simulation allows users to explore the relationship between the period and amplitude of a simple pendulum. You can adjust the length and initial angle of the pendulum and observe how these parameters affect the pendulum's oscillation period. The simulation also provides data and graphs to help users visualize and understand the underlying physics principles of pendulum motion."
+    },
+    {
+        "title": "Electrostatic Field: Where Are the Charges?",
+        "link": "https://cosci.tw/run/?name=ckGFnq1530507339624",
+        "summary": "This interactive simulation helps users visualize electrostatic fields and determine the locations of electric charges. By adjusting various configurations, users can observe how electric field lines change, deepen their understanding of the relationship between charge placement and field behavior, and practice theoretical concepts in a virtual environment. The tool is particularly useful for students learning about electric fields, charges, and basic principles of electrostatics."
+    },
+    {
+        "title": "Transverse Wave - Wavelength and Period Simulation",
+        "link": "https://cosci.tw/run/?name=StVMbO1479368482160",
+        "summary": "This interactive simulation demonstrates the concepts of transverse waves, particularly focusing on the parameters of wavelength and period. Users can manipulate wave properties and observe real-time changes in wave behavior, helping to visualize the relationships between wavelength, period, frequency, and wave speed. The simulation is an educational tool suitable for physics students exploring wave phenomena."
+    },
+    {
+        "title": "Wave-Doppler Effect Simulation",
+        "link": "https://cosci.tw/run/?name=EcF4ld1552613409730",
+        "summary": "This website hosts an interactive simulation focused on the Doppler effect with waves. Users can visualize how the frequency and wavelength of waves change relative to the motion of the source or observer. The simulation helps demonstrate the principles behind the Doppler effect, allowing for adjustments in speed and direction to see how these variables affect the observed wave patterns. It is useful for students, educators, and anyone interested in understanding wave phenomena."
+    },
+    {
+        "title": "Pressure-Communicating tube",
+        "link": "https://cosci.tw/run/?name=LD7vSe1547687548936",
+        "summary": "The 'Pressure-Communicating tube' simulation, available on the Cosci.tw website, allows users to explore the concept of pressure in communicating tubes. It visually demonstrates how fluid levels adjust in connected tubes under various conditions, helping users understand principles of fluid statics such as pressure equilibrium and hydrostatics. The simulation is interactive and useful for students and educators learning about physics and fluid mechanics."
+    },
+    {
+        "title": "Magnetism - Law of Magnetic Induction Simulation",
+        "link": "https://cosci.tw/run/?name=UFyc981567043317223",
+        "summary": "This interactive simulation explores the law of magnetic induction, allowing users to visualize and manipulate the magnetic field and induced current within a virtual experiment. The website provides tools to adjust variables such as coil turns, magnetic field strength, and speed of motion, offering an engaging way to understand Faraday’s Law and electromagnetic induction concepts with real-time graphical feedback."
+    },
+    {
+        "title": "Center of Mass and Conservation of Momentum Fun",
+        "link": "https://cosci.tw/run/?name=rNVkFy1479867683402",
+        "summary": "This interactive simulation allows users to explore the concepts of center of mass and conservation of momentum. Users can perform experiments by manipulating the masses and velocities of objects, observe the results of collisions, and visualize how the center of mass and total momentum are affected. The simulation is designed for physics learners and educators to provide hands-on understanding of these fundamental mechanics principles."
+    },
+    {
+        "title": "Specific heat and temperature change",
+        "link": "https://cosci.tw/run/?name=AtmJN21540784814954",
+        "summary": "This interactive simulation allows users to explore the relationship between specific heat, temperature change, and energy transfer. Users can manipulate variables such as material type, mass, and energy input to observe how these factors impact temperature changes in different substances. The simulation is designed to help students and teachers visualize and understand the concept of specific heat capacity in a hands-on, experimental way."
+    },
+    {
+        "title": "Projectile Motion: Two Cannons",
+        "link": "https://cosci.tw/run/?name=JSkoki1486970604669",
+        "summary": "This simulation allows users to explore the physics of projectile motion by firing two cannons under different conditions. Users can adjust parameters such as launch angles and speeds for each cannon, observe the resulting trajectories, and see how variations affect the range and height of the projectiles. The tool is useful for visualizing fundamental concepts in kinematics, vectors, and energy, making it suitable for both classroom demonstrations and individual learning."
+    },
+    {
+        "title": "Projectile Motion - Where Will It Land?",
+        "link": "https://cosci.tw/run/?name=ecz9qI1488519743772",
+        "summary": "This interactive simulation allows users to explore the physics of projectile motion, specifically examining where a projectile will land based on various input parameters like launch angle, initial velocity, and height. The simulation visually demonstrates the curved path of a projectile and provides helpful tools for both learning and teaching fundamentals of kinematics in two dimensions."
+    },
+    {
+        "title": "摩擦力-牆面正向力B",
+        "link": "https://cosci.tw/run/?name=sknce21445927500096",
+        "summary": "本網頁提供『摩擦力-牆面正向力B』互動式物理模擬實驗，讓使用者可以模擬物體在牆面上因受不同正向力產生的摩擦力變化。透過調整參數（如正向力大小、摩擦係數等），可視覺化觀察摩擦力與其它受力情形的關係，非常適合教學與學生自主學習摩擦力概念。"
+    },
+    {
+        "title": "Centripetal Force – Path and Period of Satellites",
+        "link": "https://cosci.tw/run/?name=axcSN41469081156263",
+        "summary": "This interactive simulation explores the relationship between centripetal force, the orbital path, and the period of satellites. Users can visualize satellite motion, adjust various parameters such as mass, radius, and velocity, and observe how these factors affect the orbit and period. The simulation is educational and designed for students or anyone learning about orbital mechanics and the physics of satellites."
+    },
+    {
+        "title": "光的反射-小紅帽任務",
+        "link": "https://cosci.tw/run/?name=LFoP5h1681971316926",
+        "summary": "這是一款以小紅帽為主角的互動式物理學習模擬遊戲，重點在於『光的反射』原理。玩家需幫助小紅帽運用平面鏡反射的原理規劃安全路徑，避開大野狼，並順利抵達奶奶家。網站提供操作教學與模擬情境，適合用於物理課程輔助教學。"
+    },
+    {
+        "title": "Velocity and motion of uniform acceleration",
+        "link": "https://cosci.tw/run/?name=LN5I3e1558670600609",
+        "summary": "This website provides an interactive simulation focused on velocity and motion under uniform acceleration. Users can manipulate parameters such as initial velocity, acceleration, and time to observe how these factors affect an object's velocity and displacement. The graphical interface visualizes motion on position-time and velocity-time graphs, making it an effective educational tool for understanding fundamental concepts in physics related to kinematics and uniformly accelerated motion."
+    },
+    {
+        "title": "燈光與顏色遊戲(測驗版)",
+        "link": "https://cosci.tw/run/?name=QXAglz1688283510384",
+        "summary": "這個互動式線上模擬工具讓使用者透過拖曳與調整燈光來觀察各種顏色混合的效果。適合學習與測驗加色混合（光的三原色）以及減色混合（顏料的三原色）等概念。也設有小測驗功能，幫助使用者確認自己的學習成效。"
+    },
+    {
+        "title": "Color Addition and Subtraction Simulation",
+        "link": "https://cosci.tw/run/?name=ICRECe1675143763167",
+        "summary": "This interactive simulation allows users to explore the concepts of color addition and subtraction, fundamental principles in the study of light and color theory. Through the interface, users can combine various primary colors (such as red, green, and blue) or manipulate filters to observe the resultant colors created by additive or subtractive mixing. The simulation is useful for students and educators in physics or art-related fields, providing a hands-on approach to understanding how different colors interact with each other."
+    }
+]

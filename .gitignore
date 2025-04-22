@@ -41,4 +41,5 @@ wheels/
 .DS_Store
 Thumbs.db
 
-/statics/
+/statics/chroma_db/
+/statics/rag_logs/

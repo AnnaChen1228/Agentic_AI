@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from RAG.info import chat, follow_up_chat
 from RAG import retrieve
+from RAG.store_vectordb import store_history
 import json
 from pathlib import Path
 from util.file import write_json_keep
@@ -58,7 +59,7 @@ async def init_chat():
         current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
         log_path = f'{log_folder}{current_time}.jsonl'
         initial_greeting = chat("Hi this is first time to talk introduce youself and ask me some question to fill the info", False)
-        
+        # print(initial_greeting)
         if initial_greeting is None:
             write_json_keep({
                 "response": "Hi I'm guide agent. How can I help you?",
@@ -97,7 +98,7 @@ async def init_chat():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/chat")
-async def chat_endpoint(request: Request):
+async def get_chat(request: Request):
     global vectorstores
     print('chat')
     try:
@@ -117,6 +118,7 @@ async def chat_endpoint(request: Request):
             
             if user_info is None:
                 write_json_keep({
+                    "query": query,
                     "response": "Chat ended",
                     "title": [],
                     "id": [],
@@ -143,7 +145,14 @@ async def chat_endpoint(request: Request):
                     )
                     # store to history
                     print(response)
+                    store_history({
+                        'query':query,
+                        'content':result['retrieve_info'],
+                        'id':result['id'],
+                        'title':result['title']
+                    })
                     write_json_keep({
+                        "query": query,
                         "response": response,
                         "title": result.get('title', []),
                         "id": result.get('id', []),
@@ -165,6 +174,7 @@ async def chat_endpoint(request: Request):
                     print('follow_up')
                     user_info = follow_up_chat(query, user_info['info'], True)
                     write_json_keep({
+                        "query": query,
                         "response": user_info['response'],
                         "title": [],
                         "id": [],
@@ -183,6 +193,7 @@ async def chat_endpoint(request: Request):
                         "complete": False
                     }
             write_json_keep({
+                        "query": query,
                         "response": user_info['response'],
                         "title": [],
                         "id": [],
@@ -209,6 +220,7 @@ async def chat_endpoint(request: Request):
             
             if user_info is None:
                 write_json_keep({
+                    "query": query,
                     "response": "Chat error occurred",
                     "title": [],
                     "id": [],
@@ -233,6 +245,7 @@ async def chat_endpoint(request: Request):
                         user_info['info']
                     )
                     write_json_keep({
+                        "query": query,
                         "response": response,
                         "title": result.get('title', []),
                         "id": result.get('id', []),
@@ -252,6 +265,7 @@ async def chat_endpoint(request: Request):
                         "complete": True
                     }
             write_json_keep({
+                "query": query,
                 "response": user_info['response'],
                 "title": [],
                 "id": [],

@@ -7,14 +7,16 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import os
 import json
-import re
-
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from util.file import write_json, write_json_rag
+from RAG.store_vectordb import store_history
 load_dotenv()
 embedding = OpenAIEmbeddings(model='text-embedding-3-small', openai_api_key=os.getenv('OPENAI_API_KEY'))
 llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.5, api_key=os.getenv('OPENAI_API_KEY'))
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 PERSIST_DIR = './statics/chroma_db'
-
+retrieve_log = './statics/retrieve_log.json'
 
 
 item = {
@@ -45,7 +47,7 @@ def load_vectorstores():
     vectorstores = {
         'global': {},
         'grade': {},
-        'category': {}
+        'category': {},
     }
     """載入所有向量數據庫"""
     embedding = OpenAIEmbeddings(
@@ -59,7 +61,11 @@ def load_vectorstores():
         embedding_function=embedding,
         persist_directory='./statics/chroma_db'
     )
-    
+    vectorstores['history'] = Chroma(
+        collection_name="history",
+        embedding_function=embedding,
+        persist_directory='./statics/chroma_db'
+    )
     # 載入年級集合
     collection_names_grade = {
         'Grade 1 to Grade 6': 'grade1-6',
@@ -117,9 +123,9 @@ def clean_content(text):
     
     return text
 
-def format_retrieved_docs(retrieved_docs):
+def format_retrieved_docs(query,retrieved_docs):
     """格式化檢索到的文檔"""
-    retrieve_info = 'Retrieve info:\n'
+    retrieve_info = ''
     
     for doc in retrieved_docs:
         # 清理文檔內容
@@ -129,9 +135,16 @@ def format_retrieved_docs(retrieved_docs):
         title = str(doc.metadata.get('title', ''))
         doc_id = str(doc.metadata.get('id', ''))
         
+        data = {
+            'title':title,
+            'id':doc_id,
+            'content':clean_content_text,
+            'query':query
+        }
         # 構建輸出字符串
         retrieve_info += f"{clean_content_text}\n - Reference simulation：{title}, id:{doc_id}\n"
-    
+        store_history(data)
+        write_json_rag({'query':query,'retrieve_info': clean_content_text,'id': str(doc.metadata.get('id', '')), 'title': str(doc.metadata.get('title', ''))},'retrieve_log.json')
     return retrieve_info,title,doc_id
 
 def retrieve_simulation(vectorstores,user_info):
@@ -154,7 +167,7 @@ def retrieve_simulation(vectorstores,user_info):
     query = user_info['rag_query']
     print('start retrieving')
     is_retrieve = False
-    retrieve_info = 'Retrieve info:\n'
+    retrieve_info = ''
     id = []
     title = []
     for category in category_list:
@@ -171,8 +184,8 @@ def retrieve_simulation(vectorstores,user_info):
         category_retrieved_docs = category_vectorstoreretriever.invoke(query)
         if category_retrieved_docs:
             is_retrieve = True
-            category_retrieve_info,simu_title,simu_id = format_retrieved_docs(category_retrieved_docs)
-            retrieve_info += f"- {category_retrieve_info}\n"
+            category_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,category_retrieved_docs)
+            retrieve_info += f"- Retrieve from {categories[int(category)]}:\n{category_retrieve_info}\n"
             title.append(simu_title)
             id.append(simu_id)
     grade_vectorstore = vectorstores['grade'][grade[int(user_grade)]]    
@@ -185,11 +198,11 @@ def retrieve_simulation(vectorstores,user_info):
     grade_retrieved_docs = grade_vectorstoreretriever.invoke(query)
     if grade_retrieved_docs:
         is_retrieve = True
-        grade_retrieve_info,simu_title,simu_id = format_retrieved_docs(grade_retrieved_docs)
-        retrieve_info += f"- {grade_retrieve_info}\n"
+        grade_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,grade_retrieved_docs)
+        retrieve_info += f"- Retrieve from {grade[int(user_grade)]}:\n{grade_retrieve_info}\n"
         title.append(simu_title)
         id.append(simu_id)
-
+        
     return {
         'is_retrieve': is_retrieve,
         'retrieve_info': retrieve_info,

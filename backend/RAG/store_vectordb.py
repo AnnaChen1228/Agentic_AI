@@ -40,6 +40,21 @@ collection_names_categories = {
 }
 
 def create_db():
+    try:
+        vectorstore = Chroma(
+            collection_name="history",
+            embedding_function=embedding,
+            persist_directory=PERSIST_DIR
+        )
+        print("Found existing history collection")
+    except:
+        vectorstore = Chroma.from_documents(
+            documents=[],
+            embedding=embedding,
+            collection_name="history",
+            persist_directory=PERSIST_DIR
+        )
+        print("Created new history collection")
     # 創建全域集合
     try:
         vectorstore = Chroma(
@@ -107,6 +122,18 @@ def clean_html(raw_html):
     cleantext = ' '.join([line.strip() for line in cleantext.splitlines() if line.strip()])
     return cleantext
 
+def check_duplicate(content, vectorstore, similarity_threshold=0.95):
+    """檢查是否存在重複內容"""
+    try:
+        results = vectorstore.similarity_search_with_relevance_scores(
+            content,
+            k=1
+        )
+        return bool(results and results[0][1] > similarity_threshold)
+    except Exception as e:
+        print(f"檢查重複時發生錯誤: {str(e)}")
+        return False
+
 def add_simulation_to_db(data, vectorstores):
     for simulation_data in data:
         try:
@@ -116,21 +143,20 @@ def add_simulation_to_db(data, vectorstores):
             intro = simulation_data.get('intro', '')
             # 安全地獲取其他字段
             title = simulation_data.get('title', '')
-            sim_id = simulation_data.get('id', '')
+            sim_id = str(simulation_data.get('id', ''))  # 確保 ID 是字符串
             keywords = simulation_data.get('infoKeywords', [])
             categories = simulation_data.get('infoCategories', [])
             grades = simulation_data.get('infoGrade', [])
-            variables = simulation_data.get('v', {})  # Changed to dictionary
+            variables = simulation_data.get('v', {})
 
             # 將變數資訊轉換為文字
             variables_text = ""
             for var_name, var_value in variables.items():
-                # 只處理帶有 _comment 後綴的項目
                 if var_name.endswith('_comment'):
                     base_name = var_name.replace('_comment', '')
                     unit = variables.get(f"{base_name}_unit", '').strip('"')
                     comment = var_value.strip('"')
-                    if comment:  # 只有當註釋不為空時才添加
+                    if comment:
                         variables_text += f"Variable: {base_name}"
                         if comment:
                             variables_text += f" - {comment}"
@@ -138,10 +164,10 @@ def add_simulation_to_db(data, vectorstores):
                             variables_text += f" ({unit})"
                         variables_text += "\n"
 
-            # 準備全域文檔內容（字串格式）
+            # 準備全域文檔內容
             all_content = f"""
 Title: {title}
-Introduaiotn: {intro}
+Introduction: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
@@ -153,9 +179,14 @@ Variables:
             
             # 基本 metadata
             metadata = {
-                'title': title,
-                'id': sim_id
+                'title': str(title),
+                'id': str(sim_id)
             }
+
+            # 檢查全域集合是否有重複
+            if check_duplicate(all_content, vectorstores['global']['all'],similarity_threshold=1):
+                print(f"Skip duplicate content: {title}")
+                continue
             
             # 創建全域文檔
             doc_all = Document(
@@ -172,7 +203,7 @@ Variables:
             # 年級相關文檔內容
             grade_content = f"""
 Title: {title}
-Introduaiotn: {intro}
+Introduction: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
@@ -188,7 +219,9 @@ Variables:
 
             for grade in grades_to_add:
                 if grade in vectorstores['grade']:
-                    vectorstores['grade'][grade].add_documents([doc_grade])
+                    # 檢查該年級集合是否有重複
+                    if not check_duplicate(grade_content, vectorstores['grade'][grade],similarity_threshold=1):
+                        vectorstores['grade'][grade].add_documents([doc_grade])
             
             # 處理類別集合
             categories_to_add = categories if categories else ['Other']
@@ -196,7 +229,7 @@ Variables:
             # 類別相關文檔內容
             category_content = f"""
 Title: {title}
-Introduaiotn: {intro}
+Introduction: {intro}
 Abstract: {cleaned_abstract}
 Description: {cleaned_desc}
 Keywords: {', '.join(keywords)}
@@ -211,11 +244,12 @@ Variables:
 
             for category in categories_to_add:
                 if category in vectorstores['category']:
-                    vectorstores['category'][category].add_documents([doc_category])
+                    # 檢查該類別集合是否有重複
+                    if not check_duplicate(category_content, vectorstores['category'][category],similarity_threshold=1):
+                        vectorstores['category'][category].add_documents([doc_category])
                 else:
-                    vectorstores['category']['Other'].add_documents([doc_category])
-                    
-            print(f"Successfully added: {title}")
+                    if not check_duplicate(category_content, vectorstores['category']['Other'],similarity_threshold=1):
+                        vectorstores['category']['Other'].add_documents([doc_category])
             
         except Exception as e:
             print(f"Error processing data: {str(e)}")
@@ -223,6 +257,38 @@ Variables:
             continue
             
     print("All simulation data has been added to the database.")
+
+def store_history(history_data):
+    vectorstore = Chroma(
+        collection_name="history",
+        embedding_function=embedding,
+        persist_directory=PERSIST_DIR
+    )
+    
+    metadata = {
+        'title': str(history_data['title']),  
+        'id': str(history_data['id'])         
+    }
+    
+    content = f'''{history_data['query']}:\n{history_data['content']}'''
+    
+    if check_duplicate(content, vectorstore,similarity_threshold=0.8):
+        print(f"Skip duplicate content: {metadata['title']}")
+        return
+    
+    doc_all = Document(
+        page_content=content,
+        metadata=metadata
+    )
+    
+    try:
+        vectorstore.add_documents([doc_all])
+        print("成功添加新內容")
+        return True
+    except Exception as e:
+        print(f"添加文檔時發生錯誤: {str(e)}")
+        return False
+
 
 def main():
     file_path = './RAG/data/simulation_info_intro.json'

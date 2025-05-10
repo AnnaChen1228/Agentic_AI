@@ -147,35 +147,33 @@ def add_simulation_to_db(data, vectorstores):
             keywords = simulation_data.get('infoKeywords', [])
             categories = simulation_data.get('infoCategories', [])
             grades = simulation_data.get('infoGrade', [])
-            variables = simulation_data.get('v', {})
+            # variables = simulation_data.get('v', {})
 
-            # 將變數資訊轉換為文字
-            variables_text = ""
-            for var_name, var_value in variables.items():
-                if var_name.endswith('_comment'):
-                    base_name = var_name.replace('_comment', '')
-                    unit = variables.get(f"{base_name}_unit", '').strip('"')
-                    comment = var_value.strip('"')
-                    if comment:
-                        variables_text += f"Variable: {base_name}"
-                        if comment:
-                            variables_text += f" - {comment}"
-                        if unit:
-                            variables_text += f" ({unit})"
-                        variables_text += "\n"
+            # # 將變數資訊轉換為文字
+            # variables_text = ""
+            # for var_name, var_value in variables.items():
+            #     if var_name.endswith('_comment'):
+            #         base_name = var_name.replace('_comment', '')
+            #         unit = variables.get(f"{base_name}_unit", '').strip('"')
+            #         comment = var_value.strip('"')
+            #         if comment:
+            #             variables_text += f"Variable: {base_name}"
+            #             if comment:
+            #                 variables_text += f" - {comment}"
+            #             if unit:
+            #                 variables_text += f" ({unit})"
+            #             variables_text += "\n"
 
             # 準備全域文檔內容
             all_content = f"""
-Title: {title}
-Introduction: {intro}
-Abstract: {cleaned_abstract}
-Description: {cleaned_desc}
-Keywords: {', '.join(keywords)}
-Categories: {', '.join(categories)}
-Grade Levels: {', '.join(grades)}
-Variables:
-{variables_text}
-"""
+            Title: {title}
+            Introduction: {intro}
+            Abstract: {cleaned_abstract}
+            Description: {cleaned_desc}
+            Keywords: {', '.join(keywords)}
+            Categories: {', '.join(categories)}
+            Grade Levels: {', '.join(grades)}
+            """
             
             # 基本 metadata
             metadata = {
@@ -202,15 +200,13 @@ Variables:
             
             # 年級相關文檔內容
             grade_content = f"""
-Title: {title}
-Introduction: {intro}
-Abstract: {cleaned_abstract}
-Description: {cleaned_desc}
-Keywords: {', '.join(keywords)}
-Categories: {', '.join(categories)}
-Variables:
-{variables_text}
-"""
+            Title: {title}
+            Introduction: {intro}
+            Abstract: {cleaned_abstract}
+            Description: {cleaned_desc}
+            Keywords: {', '.join(keywords)}
+            Categories: {', '.join(categories)}
+            """
             
             doc_grade = Document(
                 page_content=grade_content,
@@ -228,15 +224,13 @@ Variables:
             
             # 類別相關文檔內容
             category_content = f"""
-Title: {title}
-Introduction: {intro}
-Abstract: {cleaned_abstract}
-Description: {cleaned_desc}
-Keywords: {', '.join(keywords)}
-Grade Levels: {', '.join(grades)}
-Variables:
-{variables_text}
-"""            
+            Title: {title}
+            Introduction: {intro}
+            Abstract: {cleaned_abstract}
+            Description: {cleaned_desc}
+            Keywords: {', '.join(keywords)}
+            Grade Levels: {', '.join(grades)}
+            """            
             doc_category = Document(
                 page_content=category_content,
                 metadata=metadata
@@ -289,12 +283,23 @@ def store_history(history_data):
         print(f"添加文檔時發生錯誤: {str(e)}")
         return False
 
-
+def clean_persist_dir():
+    if os.path.exists(PERSIST_DIR):
+        # 獲取所有子目錄
+        for item in os.listdir(PERSIST_DIR):
+            item_path = os.path.join(PERSIST_DIR, item)
+            # 如果不是要保留的collection，則刪除
+            if item != "history":
+                if os.path.isdir(item_path):
+                    shutil.rmtree(item_path)
+                else:
+                    os.remove(item_path)
+                    
 def main():
     file_path = './RAG/data/simulation_info_intro.json'
     data = read_json(file_path)
     if os.path.exists(PERSIST_DIR):
-        shutil.rmtree(PERSIST_DIR)
+        clean_persist_dir()
     # 初始化向量存儲
     create_db()
     

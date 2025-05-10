@@ -172,3 +172,8 @@ Please base on retrieve info to answer the question and explain why you choose t
         }}
         Important: Make sure to use the exact simulation id from the retrieve info, do not modify or change it.
 """
+
+rag_enhance = '''
+Please bese on user info to enhance rag query
+{user_info}
+'''

@@ -36,7 +36,7 @@ You are a friendly science teacher. Collect essential student info through natur
   5: Electromagnetism, 6: Modern Physics, 7: Chemistry,
   8: Earth Science, 9: Other
 - `detail_category`: Specific topics (string array) - REQUIRED
-- `rag_query`: Search query based on info
+- `query`: combine orginal quey and user message(every time need to give)
 - `response`: Your response/question
 - `complete`: true when all required info available
 
@@ -88,9 +88,9 @@ def get_chat_response(messages):
                                         "type": "array",
                                         "items": {"type": "string"}
                                     },
-                                    "rag_query": {"type": "string"}
+                                    "query": {"type": "string"}
                                 },
-                                "required": ["name", "grade", "age", "category", "detail_category", "rag_query"],
+                                "required": ["name", "grade", "age", "category", "detail_category", "query"],
                                 "additionalProperties": False  # 添加到 info 對象
                             },
                             "response": {"type": "string"},
@@ -127,7 +127,7 @@ def chat(user_input, continue_chat):
     if user_input.lower() == 'exit':
         return None
 
-    messages.append({"role": "user", "content": f"Please provide a JSON response for: {user_input}"})
+    messages.append({"role": "user", "content": f"Please provide a JSON response for user message: {user_input}"})
     
     response = get_chat_response(messages)
     if response:
@@ -167,7 +167,7 @@ def follow_up_chat(user_input, previous_info, is_first_question=False):
             "content": f'''
 # Follow-up Guide
 
-Continue as caring science teacher. Ask relevant follow-up questions based on previous context. Your goal is to gather enough specific information to form a detailed rag_query for simulation retrieval.
+Continue as caring science teacher. Ask relevant follow-up questions based on previous context. Your goal is to gather enough specific information for simulation retrieval.
 
 ## Current Student Info (DO NOT MODIFY):
 name: {previous_info.get('name')}
@@ -181,14 +181,13 @@ age: {previous_info.get('age')}
   - age: "{previous_info.get('age')}"
   - category: {previous_info.get('category')}
   - detail_category: {previous_info.get('detail_category')}
-  - rag_query: Detailed search query combining all gathered information
+  - query: Detailed combining all gathered information with previous query {previous_info.get('query')}
 
 ## Complete Criteria (IMPORTANT):
 Set complete = True when you have gathered ALL of:
 1. Student's specific learning difficulty or challenge
 2. Concrete examples of what they want to learn
 3. Their current understanding level
-4. Enough context to form a detailed rag_query
 
 ## Guidelines
 1. DO NOT change name, grade, or age values
@@ -206,14 +205,14 @@ Return valid JSON only.
         follow_up_messages = [system_prompt]
         follow_up_messages.append({
             "role": "user", 
-            "content": f"Previous context: {previous_info}\nNew input: '{user_input}'\nBased on this, either ask a focused follow-up question OR if you have enough specific details, set complete=True and form a detailed rag_query."
+            "content": f"Previous context: {previous_info}\nNew input: '{user_input}'\nBased on this, either ask a focused follow-up question OR if you have enough specific details, set complete=True."
         })
     elif user_input.lower() == 'exit':
         return None
     else:
         follow_up_messages.append({
             "role": "user", 
-            "content": f"Based on the user's response: '{user_input}', evaluate if you have enough specific information to form a detailed rag_query. If yes, set complete=True and create a comprehensive rag_query. If not, ask another focused question about their specific needs or understanding."
+            "content": f"Based on the user's response: '{user_input}', evaluate if you have enough specific information."
         })
     
     response = get_chat_response(follow_up_messages)

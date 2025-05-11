@@ -12,6 +12,7 @@ An interactive learning assistant system with RAG (Retrieval-Augmented Generatio
 ├── README.md
 ├── backend
 │   ├── Dockerfile
+│   ├── multiagent
 │   ├── RAG
 │   ├── app.py
 │   ├── rag_main.py

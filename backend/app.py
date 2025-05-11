@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from RAG.info import chat, follow_up_chat
+from multiagent.chat import chat, follow_up_chat,summary_simulation
 from RAG import retrieve
 from RAG.store_vectordb import store_history
 import json
@@ -139,7 +139,7 @@ async def get_chat(request: Request):
                 result = retrieve.retrieve_simulation(vectorstores, user_info['info'])
                 user_info['retrieve'] = result
                 if result.get('is_retrieve', True):
-                    response = retrieve.summary_simulation(
+                    response = summary_simulation(
                         result['retrieve_info'],
                         user_info['info']
                     )

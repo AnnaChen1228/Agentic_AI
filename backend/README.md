@@ -2,16 +2,20 @@
 
 A FastAPI-based backend with RAG (Retrieval-Augmented Generation) capabilities for the interactive learning assistant system.
 
-## Multiagent
-![System Workflow](../statics/public/multiagent.png)
+## WorkFlow
+![System Workflow](../statics/public/backend.png)
+
+## Multiagent WorkFlow
+![Multiagent Workflow](../statics/public/multiagent.png)
 
 ## Project Structure
 ```bash
 .
 ├── Dockerfile
+├── multiagent
+│   └── chat.py            # Use LLM chat with user
 ├── RAG
 │   ├── data
-│   ├── info.py            # User information handling
 │   ├── preprocess.py      # Information preprocessing
 │   ├── prompt.py          # Prompt templates
 │   ├── retrieve.py        # Retrieval simulation

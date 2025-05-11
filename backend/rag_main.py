@@ -1,7 +1,7 @@
-from RAG import info
+from backend.multiagent import chat
 from pathlib import Path
 
-from RAG import info
+from backend.multiagent import chat
 from pathlib import Path
 
 from RAG import retrieve
@@ -17,7 +17,7 @@ def main():
     is_first_question = True
     
     # 添加初始問候
-    initial_greeting = info.chat("", False)  # 傳入空字符串觸發初始問候
+    initial_greeting = chat.chat("", False)  # 傳入空字符串觸發初始問候
     if initial_greeting and "response" in initial_greeting:
         print("\nAI:", initial_greeting["response"])
     
@@ -26,7 +26,7 @@ def main():
         
         if not in_follow_up:
             # 初始對話階段
-            user_info = info.chat(user_input, continue_chat)
+            user_info = chat.chat(user_input, continue_chat)
             print("\nAI:", user_info["response"])
             # print(user_info["info"])
             print(user_info["complete"])
@@ -54,10 +54,10 @@ def main():
             # 追問階段
             print('follow_up')
             if is_first_question:
-                user_info = info.follow_up_chat("", last_complete_info, True)
+                user_info = chat.follow_up_chat("", last_complete_info, True)
                 is_first_question = False
             else:
-                user_info = info.follow_up_chat(user_input, user_info['info'], False)
+                user_info = chat.follow_up_chat(user_input, user_info['info'], False)
             print(user_info)
             if user_info is None:
                 print("An error occurred during the conversation.")

@@ -150,7 +150,7 @@ def format_retrieved_docs(query,retrieved_docs):
 def format_information(info):
     category_index = info['category']
     grade_detail = grade[info['grade']]
-    question = info['question']
+    question = info['query']
     category = ''
     for index in category_index:
         category += categories[index]
@@ -210,10 +210,11 @@ def retrieve_simulation(vectorstores,user_info):
     user_grade = user_info['grade']
     info_str = format_information(user_info)
     enhance_msg = f'''
-        Please bese on user info to enhance rag query
+        Please bese on user info to enhance question it will use to recommand user suitable simulation
         {info_str}
     '''
     query = eval(enhance_query(enhance_msg))['rag_query']
+    print(f'rag_query:{query}')
     is_retrieve = False
     retrieve_info = ''
     id = []
@@ -222,10 +223,11 @@ def retrieve_simulation(vectorstores,user_info):
     history_vectorstore_retriever = history_vectorstore.as_retriever(
             search_type="similarity_score_threshold",
             search_kwargs={
-                'score_threshold': 0.2,
+                'score_threshold': 0.5,
                 'k':3}
         )  
     history_retrieved_docs = history_vectorstore_retriever.invoke(query)
+    print(history_retrieved_docs)
     if history_retrieved_docs:
         is_retrieve = True
         history_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,history_retrieved_docs)
@@ -277,142 +279,6 @@ def retrieve_simulation(vectorstores,user_info):
         'title': title,
         'id': id,
     }
-
-def retrieve_simulation_hw(vectorstores,user_info,query):
-    """
-    {
-        "info": {
-            "name": "",        // student's name (string)
-            "grade": "",       // grade index as string ("1" to "4")
-            "age": "",         // student's age (string)
-            "category": [],    // category indices as strings (array of "1" to "9")
-            "detail_category": [], // dynamically generated topics (array of strings)
-            "rag_query": ""   // generate the query use to retreive base on info
-        },
-        "response": "",        // your conversational response (string)
-        "complete": false      // whether all necessary info is collected (boolean)
-    }
-    """
-    category_list = user_info['category']
-    user_grade = user_info['grade']
-    print('start retrieving')
-    is_retrieve = False
-    retrieve_info = ''
-    id = []
-    title = []
-    ## history
-    history_vectorstore = vectorstores['history']
-    history_vectorstore_retriever = history_vectorstore.as_retriever(
-            search_type="similarity_score_threshold",
-            search_kwargs={
-                'score_threshold': 0.2,
-                'k':3}
-        )  
-    history_retrieved_docs = history_vectorstore_retriever.invoke(query)
-    if history_retrieved_docs:
-        is_retrieve = True
-        history_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,history_retrieved_docs)
-        retrieve_info += f"- Retrieve from history:\n{history_retrieve_info}\n"
-        title.append(simu_title)
-        id.append(simu_id)
-        return {
-            'is_retrieve': is_retrieve,
-            'retrieve_info': retrieve_info,
-            'title': title,
-            'id': id,
-        }
-    ## category
-    for category in category_list:
-        category_vectorstore = vectorstores['category'][categories[int(category)]]
-        if hasattr(category_vectorstore, '_collection'):
-            count = category_vectorstore._collection.count()
-            print(f"Collection 中的文檔數量: {count}")
-        category_vectorstoreretriever = category_vectorstore.as_retriever(
-                search_type="similarity_score_threshold",
-                search_kwargs={
-                    'score_threshold': 0.2,
-                    'k':3}
-            )
-        category_retrieved_docs = category_vectorstoreretriever.invoke(query)
-        if category_retrieved_docs:
-            is_retrieve = True
-            category_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,category_retrieved_docs)
-            retrieve_info += f"- Retrieve from {categories[int(category)]}:\n{category_retrieve_info}\n"
-            title.append(simu_title)
-            id.append(simu_id)
-    ## grade
-    grade_vectorstore = vectorstores['grade'][grade[int(user_grade)]]    
-    grade_vectorstore_retriever = grade_vectorstore.as_retriever(
-            search_type="similarity_score_threshold",
-            search_kwargs={
-                'score_threshold': 0.2,
-                'k':3}
-        )    
-    grade_retrieved_docs = grade_vectorstore_retriever.invoke(query)
-    if grade_retrieved_docs:
-        is_retrieve = True
-        grade_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,grade_retrieved_docs)
-        retrieve_info += f"- Retrieve from {grade[int(user_grade)]}:\n{grade_retrieve_info}\n"
-        title.append(simu_title)
-        id.append(simu_id)
-        
-    return {
-        'is_retrieve': is_retrieve,
-        'retrieve_info': retrieve_info,
-        'title': title,
-        'id': id,
-    }
-
-def summary_simulation(info, user_info=None):
-    if not info:
-        return None
-        
-    try:
-        # 準備 system message，根據是否有 user_info 調整提示
-        system_message = """You are a friendly physics teacher assistant. Create personalized simulation recommendations based on the student's profile and interests.
-
-        Key points:
-        1. Adapt recommendations to student's grade level and interests
-        2. Explain why each simulation would be helpful for them
-        3. Use encouraging, age-appropriate language
-        4. Connect simulations to real-world applications they might care about
-        5. And it should provide title with link(https://cosci.tw/run/?name=<id>)
-        6. Encourage student to explore and ask questions
-        Keep explanations concise but engaging."""
-        
-        # 準備 user message，加入使用者資訊
-        if user_info:
-            user_context = f"""Student Profile:
-            - Name: {user_info['name']}
-            - Grade: {user_info['grade']}
-            - Age: {user_info['age']}
-            - Interests: {', '.join(user_info['detail_category'])}
-            - Current topic: {user_info['rag_query']}
-            """
-            user_message = f"Based on this student profile:\n{user_context}\n\nPlease recommend appropriate simulations from:\n{info}"
-        else:
-            user_message = f"Please recommend these physics simulations:\n\n{info}"
-        
-        messages = [
-            {"role": "system", "content": system_message},
-            {"role": "user", "content": user_message}
-        ]
-        
-        try:
-            completion = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=messages
-            )
-            return completion.choices[0].message.content
-            
-        except Exception as e:
-            print(f"Error occurred: {str(e)}")
-            return None
-            
-    except Exception as e:
-        print(f"Error occurred: {str(e)}")
-        return None
-
     
 if __name__ == '__main__':
     load_vectorstores()

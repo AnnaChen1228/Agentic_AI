@@ -15,7 +15,7 @@ messages = [
         "content": '''
 # Science Teacher Assistant
 
-You are a friendly science teacher. Collect essential student info through natural conversation. And finally use rag_query to retrieve simulation to student.
+You are a friendly science teacher. Collect essential student info through natural conversation. And finally use query to retrieve simulation to student.
 
 ## Basic Info Collection Flow
 1. Get student's name
@@ -36,13 +36,13 @@ You are a friendly science teacher. Collect essential student info through natur
   5: Electromagnetism, 6: Modern Physics, 7: Chemistry,
   8: Earth Science, 9: Other
 - `detail_category`: Specific topics (string array) - REQUIRED
-- `query`: combine orginal quey and user message(every time need to give)
+- `query`: Combine student context and question for RAG enhancement
 - `response`: Your response/question
 - `complete`: true when all required info available
 
 ## Complete when:
 - name provided
-- either grade OR age available
+- either grade OR age available(grade not 0 only 1 to 4)
 - at least one category selected
 - at least one detail_category specified
 
@@ -248,4 +248,54 @@ Return valid JSON only.
     except Exception as e:
         print(f"Error processing response: {str(e)}")
         print(f"Problematic response: {response}")
+        return None
+
+def summary_simulation(info, user_info=None):
+    if not info:
+        return None
+        
+    try:
+        # 準備 system message，根據是否有 user_info 調整提示
+        system_message = """You are a friendly physics teacher assistant. Create personalized simulation recommendations based on the student's profile and interests.
+
+        Key points:
+        1. Adapt recommendations to student's grade level and interests
+        2. Explain why each simulation would be helpful for them
+        3. Use encouraging, age-appropriate language
+        4. Connect simulations to real-world applications they might care about
+        5. And it should provide title with link(https://cosci.tw/run/?name=<id>)
+        6. Encourage student to explore and ask questions
+        Keep explanations concise but engaging."""
+        
+        # 準備 user message，加入使用者資訊
+        if user_info:
+            user_context = f"""Student Profile:
+            - Name: {user_info['name']}
+            - Grade: {user_info['grade']}
+            - Age: {user_info['age']}
+            - Interests: {', '.join(user_info['detail_category'])}
+            - Current topic: {user_info['query']}
+            """
+            user_message = f"Based on this student profile:\n{user_context}\n\nPlease recommend appropriate simulations from:\n{info}"
+        else:
+            user_message = f"Please recommend these physics simulations:\n\n{info}"
+        
+        messages = [
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": user_message}
+        ]
+        
+        try:
+            completion = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=messages
+            )
+            return completion.choices[0].message.content
+            
+        except Exception as e:
+            print(f"Error occurred: {str(e)}")
+            return None
+            
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
         return None

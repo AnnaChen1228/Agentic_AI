@@ -59,7 +59,6 @@ Return valid JSON only.
     }
 ]
 
-
 follow_up_messages = []
 
 def get_chat_response(messages):
@@ -108,7 +107,7 @@ def get_chat_response(messages):
         print(f"Error occurred: {str(e)}")
         return None
 
-def chat(user_input, continue_chat):
+def chat(user_input, messages, continue_chat):
     """
     處理單次對話並返回結果
     
@@ -119,10 +118,59 @@ def chat(user_input, continue_chat):
     Returns:
         Dict 包含回應信息，或者 None 如果用戶要求退出
     """
-    global messages
+    if messages ==[]:
+        messages = [
+    {
+        "role": "system",  # 改用 "system" 而不是 "developer"
+        "content": '''
+# Science Teacher Assistant
+
+You are a friendly science teacher. Collect essential student info through natural conversation. And finally use query to retrieve simulation to student.
+
+## Basic Info Collection Flow
+1. Get student's name
+2. Get education level (grade or age)
+3. Get interested subjects
+4. Get specific topics in chosen subjects
+
+## Required Info
+- `name`: Student's name (string) - REQUIRED
+- `grade`: Education level (int, 1-4) must be 1 to 4 reference age
+  1: Elementary (6-12 Grade 1 to Grade 6)
+  2: Junior High (13-15 Grade 7 to Grade 9)
+  3: High School (16-18 Grade 10 to Grade 12)
+  4: University (19+ Undergraduate)
+- `age`: Age range (string) reference grade
+- `category`: Subject codes (int array) - REQUIRED
+  1: Mechanics, 2: Wave, 3: Thermodynamics, 4: Optics,
+  5: Electromagnetism, 6: Modern Physics, 7: Chemistry,
+  8: Earth Science, 9: Other
+- `detail_category`: Specific topics (string array) - REQUIRED
+- `query`: Combine student context and question for RAG enhancement
+- `response`: Your response/question
+- `complete`: true when all required info available
+
+## Complete when:
+- name provided
+- either grade OR age available(grade not 0 only 1 to 4)
+- at least one category selected
+- at least one detail_category specified
+
+## Guidelines
+- must ask name and grade or age in first time
+- Follow the Basic Info Collection Flow
+- Use friendly tone
+- Provide 3-5 examples when asking about subjects/topics
+- Each response should focus on collecting ONE missing piece of info
+- introduce in first
+
+Return valid JSON only.
+'''
+    }
+]
     
-    if not continue_chat:
-        messages = [messages[0]]  # 保留 system prompt
+    # if not continue_chat:
+    #     messages = [messages[0]]  # 保留 system prompt
     
     if user_input.lower() == 'exit':
         return None
@@ -139,7 +187,7 @@ def chat(user_input, continue_chat):
             if response_dict.get("complete", False):
                 print("\nAll necessary information has been collected.")
             
-            return response_dict
+            return response_dict,messages
 
         except json.JSONDecodeError:
             print("\nError: Invalid response format")
@@ -150,7 +198,7 @@ def chat(user_input, continue_chat):
     
     return None
 
-def follow_up_chat(user_input, previous_info, is_first_question=False):
+def follow_up_chat(user_input, previous_info,follow_up_messages, is_first_question=False):
     """
     處理追問對話並返回結果
     
@@ -159,7 +207,7 @@ def follow_up_chat(user_input, previous_info, is_first_question=False):
         previous_info: 之前收集到的用戶信息 (dict)
         is_first_question: 是否是追問階段的第一個問題
     """
-    global follow_up_messages
+    # global follow_up_messages
     
     if is_first_question:
         system_prompt = {

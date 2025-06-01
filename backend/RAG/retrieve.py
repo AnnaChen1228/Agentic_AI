@@ -214,7 +214,6 @@ def retrieve_simulation(vectorstores,user_info):
         {info_str}
     '''
     query = eval(enhance_query(enhance_msg))['rag_query']
-    print(f'rag_query:{query}')
     is_retrieve = False
     retrieve_info = ''
     id = []
@@ -227,7 +226,6 @@ def retrieve_simulation(vectorstores,user_info):
                 'k':3}
         )  
     history_retrieved_docs = history_vectorstore_retriever.invoke(query)
-    print(history_retrieved_docs)
     if history_retrieved_docs:
         is_retrieve = True
         history_retrieve_info,simu_title,simu_id = format_retrieved_docs(query,history_retrieved_docs)
@@ -239,6 +237,7 @@ def retrieve_simulation(vectorstores,user_info):
             'retrieve_info': retrieve_info,
             'title': title,
             'id': id,
+            'collection': 'history'
         }
     for category in category_list:
         category_vectorstore = vectorstores['category'][categories[int(category)]]

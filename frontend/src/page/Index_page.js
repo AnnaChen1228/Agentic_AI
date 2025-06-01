@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback,useRef } from 'react';
 import { Flex, Layout, theme } from 'antd';
 import DisplayField from '../component/Display_field';
 import ChatField from '../component/Chat_field';
+import Login_field from '../component/Login_field';
 import Loading from '../component/Loading'
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -23,6 +24,8 @@ const IndexPage = () => {
     });
   }, []); // 空依賴數組，因為這個函數不依賴任何外部變量
 
+  const [isLogin, setIsLogin] = useState(false);
+  const emailRef = useRef('');
   return (
     <Layout 
       hasSider 
@@ -91,6 +94,7 @@ const IndexPage = () => {
         height: '100%',
         overflow: 'hidden'
       }}>
+        {/* {isLogin ? <ChatField onDataUpdate={handleDataFromChat} user={emailRef} />: <Login_field emailRef={emailRef} setIsLogin={setIsLogin}/>} */}
         <ChatField onDataUpdate={handleDataFromChat} />
       </Layout>
     </Layout>

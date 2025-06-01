@@ -17,7 +17,8 @@ function Chat_field({ onDataUpdate }) {
   const [chatState, setChatState] = useState({
     in_follow_up: false,
     is_first_question: true,
-    last_complete_info: null
+    last_complete_info: null,
+    messages: null,
   });
 
   // 使用 useCallback 記憶化初始化函數
@@ -26,7 +27,7 @@ function Chat_field({ onDataUpdate }) {
     initRef.current = true;
 
     try {
-      const response = await fetch('http://localhost:4000/chat/init', {
+      const response = await fetch('http://140.115.54.39:4000/chat/init', {
         method: 'GET',
         headers: {
           'Accept': 'application/json'
@@ -43,7 +44,8 @@ function Chat_field({ onDataUpdate }) {
         ...prevState,
         in_follow_up: false,
         is_first_question: true,
-        last_complete_info: data.info || null
+        last_complete_info: data.info || null,
+        messages : data.messages ||null
       }));
 
       setChatHistory([
@@ -71,7 +73,7 @@ function Chat_field({ onDataUpdate }) {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:4000/chat', {
+      const response = await fetch('http://140.115.54.39:4000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +83,8 @@ function Chat_field({ onDataUpdate }) {
           query: currentMessage,
           in_follow_up: chatState.in_follow_up,
           is_first_question: chatState.is_first_question,
-          last_complete_info: chatState.last_complete_info
+          last_complete_info: chatState.last_complete_info,
+          messages: chatState.messages,
         })
       });
     
@@ -95,7 +98,8 @@ function Chat_field({ onDataUpdate }) {
         ...prevState,
         in_follow_up: data.in_follow_up ?? false,
         is_first_question: false,
-        last_complete_info: data.info
+        last_complete_info: data.info,
+        messages :data.messages || null
       }));
       
       if (data?.title?.length && data?.id?.length) {
@@ -120,7 +124,8 @@ function Chat_field({ onDataUpdate }) {
       setChatState({
         in_follow_up: false,
         is_first_question: true,
-        last_complete_info: null
+        last_complete_info: null,
+        messages :null
       });
     } finally {
       setIsLoading(false);

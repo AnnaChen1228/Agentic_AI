@@ -58,8 +58,8 @@ async def init_chat():
         print('init')
         current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
         log_path = f'{log_folder}{current_time}.jsonl'
-        initial_greeting = chat("Hi this is first time to talk introduce youself and ask me some question to fill the info", False)
-        # print(initial_greeting)
+        initial_greeting,messages = chat("Hi this is first time to talk introduce youself and ask me some question to fill the info",[], False)
+        print(messages)
         if initial_greeting is None:
             write_json_keep({
                 "response": "Hi I'm guide agent. How can I help you?",
@@ -74,6 +74,7 @@ async def init_chat():
                 "title": [],
                 "id": [],
                 "info": None,
+                "messages": messages,
                 "in_follow_up": False,
                 "is_first_question": True
             }
@@ -90,6 +91,7 @@ async def init_chat():
             "title": [],
             "id": [],
             "info": initial_greeting.get("info", None),
+            "messages": messages,
             "in_follow_up": False,
             "is_first_question": True
         }
@@ -111,10 +113,11 @@ async def get_chat(request: Request):
         query = json_body['query']
         in_follow_up = json_body.get('in_follow_up', False)
         last_complete_info = json_body.get('last_complete_info', None)
-        
+        messages = json_body['messages']
         if not in_follow_up:
-            user_info = chat(query, True)
+            user_info,messages = chat(query,messages, True)
             print("Chat response:", user_info)
+            print("History:", messages)
             
             if user_info is None:
                 write_json_keep({
@@ -131,6 +134,7 @@ async def get_chat(request: Request):
                     "title": [],
                     "id": [],
                     "info": None,
+                    "messages": messages,
                     "in_follow_up": False,
                     "is_first_question": False
                 }
@@ -166,13 +170,14 @@ async def get_chat(request: Request):
                         "title": result.get('title', []),
                         "id": result.get('id', []),
                         "info": user_info['info'],
+                        "messages": messages,
                         "in_follow_up": True,
                         "is_first_question": False,
                         "complete": True
                     }
                 else:
                     print('follow_up')
-                    user_info = follow_up_chat(query, user_info['info'], True)
+                    user_info,messages = follow_up_chat(query, user_info['info'],messages, True)
                     write_json_keep({
                         "query": query,
                         "response": user_info['response'],
@@ -188,6 +193,7 @@ async def get_chat(request: Request):
                         "title": [],
                         "id": [],
                         "info": user_info['info'],
+                        "messages": messages,
                         "in_follow_up": True,
                         "is_first_question": False,
                         "complete": False
@@ -207,6 +213,7 @@ async def get_chat(request: Request):
                 "title": [],
                 "id": [],
                 "info": user_info['info'],
+                "messages": messages,
                 "in_follow_up": False,
                 "is_first_question": False,
                 "complete": False
@@ -233,6 +240,7 @@ async def get_chat(request: Request):
                     "title": [],
                     "id": [],
                     "info": None,
+                    "messages": messages,
                     "in_follow_up": False,
                     "is_first_question": False
                 }
@@ -260,6 +268,7 @@ async def get_chat(request: Request):
                         "title": result.get('title', []),
                         "id": result.get('id', []),
                         "info": user_info['info'],
+                        "messages": messages,
                         "in_follow_up": True,
                         "is_first_question": False,
                         "complete": True
@@ -279,6 +288,7 @@ async def get_chat(request: Request):
                 "title": [],
                 "id": [],
                 "info": user_info['info'],
+                "messages": messages,
                 "in_follow_up": True,
                 "is_first_question": False,
                 "complete": False

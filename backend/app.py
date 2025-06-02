@@ -1,5 +1,6 @@
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
+from typing import Optional
 import uvicorn
 from multiagent.chat import chat, follow_up_chat,summary_simulation
 from RAG import retrieve
@@ -22,7 +23,7 @@ app.add_middleware(
 )
 
 FIRST_RUN = True  # 全局參數控制是否為首次運行
-log_folder = 'statics/rag_logs/'
+log_folder = 'statics/chat_history/'
 log_path = ''
 @app.on_event("startup")
 async def startup_event():
@@ -52,12 +53,12 @@ async def check_vectorstores(request: Request, call_next):
     return response
 
 @app.get("/chat/init")
-async def init_chat():
+async def init_chat(x_client_id: Optional[str] = Header(None)):
     try:
-        global log_path
         print('init')
-        current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
-        log_path = f'{log_folder}{current_time}.jsonl'
+        print(x_client_id)
+        # current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
+        log_path = f'{log_folder}{x_client_id}.jsonl'
         initial_greeting,messages = chat("Hi this is first time to talk introduce youself and ask me some question to fill the info",[], False)
         print(messages)
         if initial_greeting is None:
@@ -100,13 +101,13 @@ async def init_chat():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/chat")
-async def get_chat(request: Request):
+async def get_chat(request: Request,x_client_id: Optional[str] = Header(None)):
     global vectorstores
     print('chat')
     try:
         body = await request.body()
         json_body = json.loads(body)
-        
+        log_path = f'{log_folder}{x_client_id}.jsonl'
         if 'query' not in json_body:
             raise HTTPException(status_code=400, detail="Query not provided")
             
@@ -300,5 +301,5 @@ async def get_chat(request: Request):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == '__main__':
-    Path('./statics/rag_logs').mkdir(parents=True, exist_ok=True)
+    Path('./statics/chat_history').mkdir(parents=True, exist_ok=True)
     uvicorn.run("app:app", host="0.0.0.0", port=4000, reload=True)

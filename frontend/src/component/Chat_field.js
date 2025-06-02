@@ -5,6 +5,7 @@ import Send_btn from './Send_btn.js';
 import System_message from './System_message.js';
 import User_message from './User_message.js';
 import Loading from './Loading.js';
+import { getClientId } from '../utils/clientId';
 
 function Chat_field({ onDataUpdate }) {
   const messagesEndRef = useRef(null);
@@ -13,7 +14,8 @@ function Chat_field({ onDataUpdate }) {
   const [chatHistory, setChatHistory] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
-
+  const [clientId] = useState(getClientId());
+    
   const [chatState, setChatState] = useState({
     in_follow_up: false,
     is_first_question: true,
@@ -25,12 +27,12 @@ function Chat_field({ onDataUpdate }) {
   const initializeChat = useCallback(async () => {
     if (initRef.current) return; // 防止重複初始化
     initRef.current = true;
-
     try {
       const response = await fetch('http://140.115.54.39:4000/chat/init', {
         method: 'GET',
         headers: {
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'X-Client-ID': clientId
         }
       });
 
@@ -77,7 +79,8 @@ function Chat_field({ onDataUpdate }) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'X-Client-ID': clientId
         },
         body: JSON.stringify({
           query: currentMessage,

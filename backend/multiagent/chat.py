@@ -291,7 +291,7 @@ Return valid JSON only.
                 'learn' in current_response):
                 response_dict['complete'] = True
         
-        return response_dict
+        return response_dict,follow_up_messages
         
     except Exception as e:
         print(f"Error processing response: {str(e)}")
